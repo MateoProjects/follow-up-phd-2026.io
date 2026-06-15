@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Annual PhD Review — Ramon Mateo Navarro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+        integrity="sha256-cXvJrnhTth8PdkVd3fDs1PUnp4P0LeKsJGhImcHEYlg="
+        crossorigin="anonymous">
+  <script defer
+          src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+          integrity="sha256-5r/l3uvUx8zScgVbq2O9OrLHO5B7bmoi01J0CoE4H9Q="
+          crossorigin="anonymous"></script>
+  <script defer
+          src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+          integrity="sha256-e1fUJ6xicGd9r42DgN7SzHMzb5FJoWe44f4NbvZmBK4="
+          crossorigin="anonymous"></script>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css"
+        integrity="sha256-nLxQgnl9k48O54Ayh5ChMa49e8XAnBdud5J8F08p5go="
+        crossorigin="anonymous">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css"
+        integrity="sha256-WqOk5DDwjhWKLU+Yp/xxhPXvNlWUK7U7qGhj/JNqLPA="
+        crossorigin="anonymous">
+  <link rel="stylesheet" href="custom.css">
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 1 — Cover
+═══════════════════════════════════════════ -->
+<section>
+  <div class="portada-wrap">
+    <div class="portada-top">
+      <div class="bloc-tag tag-intro">Annual PhD Review</div>
+      <h1 class="portada-title">Federated Learning<br>for Medical Research:<br>A Year of Building</h1>
+      <div class="section-divider"></div>
+      <div class="portada-meta">
+        <strong>Ramon Mateo Navarro</strong><br>
+        Supervisor: Juan R. González, PhD<br>
+        UAB - ISGlobal<br>
+        Academic year 2025–2026
+      </div>
+    </div>
+    <div class="portada-bar">
+      <span>3 projects</span>
+      <strong>·</strong>
+      <span>1 publication in preparation</span>
+      <strong>·</strong>
+      <span>1 application in production</span>
+      <strong>·</strong>
+      <span>1 new research line</span>
+    </div>
+  </div>
+  <aside class="notes">
+    Good morning everyone. Today I will present the work carried out during this PhD year. It has been a very productive year in which I have advanced three projects that, although each has its own identity, form a single technological ecosystem oriented toward medical research.
+  </aside>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 2 — Ecosystem overview
+═══════════════════════════════════════════ -->
+<section>
+  <div class="bloc-tag tag-intro">Overview</div>
+  <h2>One year, three projects, one ecosystem</h2>
+  <div class="section-divider"></div>
+
+  <div class="ecosystem">
+    <div class="eco-box eco-medinet">
+      <div class="eco-icon icon-dark"><i data-lucide="layers"></i></div>
+      <div class="eco-title">Medinet</div>
+      <div class="eco-sub">Base platform<br>Federated Learning<br><em>Complete · Paper pending</em></div>
+    </div>
+    <div class="eco-arrow">→</div>
+    <div class="eco-box eco-epiflare">
+      <div class="eco-icon"><img src="assets/epiflare_mark.png" style="width:1.7em;height:1.7em;object-fit:contain;"></div>
+      <div class="eco-title">EPIFLARE</div>
+      <div class="eco-sub">App for geneticists<br>Epigenomic predictions<br><em>Operational · v0.2</em></div>
+    </div>
+    <div class="eco-arrow dashed">⇢</div>
+    <div class="eco-box eco-glucosa">
+      <div class="eco-icon icon-teal"><i data-lucide="activity"></i></div>
+      <div class="eco-title">Glucose App</div>
+      <div class="eco-sub">Glucose monitoring<br>Breast cancer<br><em>In development</em></div>
+    </div>
+  </div>
+
+  <aside class="notes">
+    Before going into detail, I want you to keep this image in mind: the three projects are not independent. Medinet is the platform everything rests on. EPIFLARE is the first real application we built on top. And the glucose app is the new research direction we are exploring.
+  </aside>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 3 — The problem
+═══════════════════════════════════════════ -->
+<section>
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:5px;">
+    <div class="bloc-tag tag-medinet" style="margin-bottom:0;">Medinet · 1/8</div>
+    <span style="font-size:0.6em;background:#F1F5F9;color:#94A3B8;padding:2px 8px;border-radius:99px;font-weight:600;">◀ context</span>
+  </div>
+  <h2>Why Federated Learning?</h2>
+  <div class="section-divider"></div>
+
+  <div class="two-col two-col-5-5" style="margin-top:20px; gap:36px; align-items:center;">
+
+    <!-- Left: problem + solution (icon + short text) -->
+    <div style="display:flex;flex-direction:column;gap:18px;">
+      <div style="display:flex;gap:14px;align-items:flex-start;">
+        <div style="flex-shrink:0;width:30px;height:30px;border-radius:50%;background:#FEE2E2;display:flex;align-items:center;justify-content:center;">
+          <i data-lucide="x" style="width:0.9em;height:0.9em;color:#DC2626;"></i>
+        </div>
+        <div>
+          <p style="font-weight:700;color:var(--text-primary);font-size:0.82em;margin:0 0 4px 0;">The Problem</p>
+          <p style="font-size:0.74em;color:var(--text-secondary);margin:0;line-height:1.55;">Clinical data <strong>cannot be centralised</strong> — GDPR, patient confidentiality and hospital regulations prevent pooling data across institutions.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:14px;align-items:flex-start;">
+        <div style="flex-shrink:0;width:30px;height:30px;border-radius:50%;background:#DCFCE7;display:flex;align-items:center;justify-content:center;">
+          <i data-lucide="check" style="width:0.9em;height:0.9em;color:#16A34A;"></i>
+        </div>
+        <div>
+          <p style="font-weight:700;color:var(--text-primary);font-size:0.82em;margin:0 0 4px 0;">The Solution: Federated Learning</p>
+          <p style="font-size:0.74em;color:var(--text-secondary);margin:0;line-height:1.55;">Bring the <strong>model to the data</strong>, not the other way around. Each hospital trains locally and shares only model parameters — never patient data.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: compact flow diagram -->
+    <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+      <div style="display:flex;gap:8px;">
+        <div style="background:var(--bg-subtle);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:0.64em;text-align:center;box-shadow:var(--shadow-sm);">
+          <i data-lucide="building-2" style="width:1.3em;height:1.3em;color:var(--text-muted);display:block;margin:0 auto 4px;"></i>
+          <div style="font-weight:600;color:var(--text-primary);">Hospital A</div>
+          <div style="color:var(--text-muted);font-size:0.85em;">local data</div>
+        </div>
+        <div style="background:var(--bg-subtle);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:0.64em;text-align:center;box-shadow:var(--shadow-sm);">
+          <i data-lucide="building-2" style="width:1.3em;height:1.3em;color:var(--text-muted);display:block;margin:0 auto 4px;"></i>
+          <div style="font-weight:600;color:var(--text-primary);">Hospital B</div>
+          <div style="color:var(--text-muted);font-size:0.85em;">local data</div>
+        </div>
+        <div style="background:var(--bg-subtle);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:0.64em;text-align:center;box-shadow:var(--shadow-sm);">
+          <i data-lucide="building-2" style="width:1.3em;height:1.3em;color:var(--text-muted);display:block;margin:0 auto 4px;"></i>
+          <div style="font-weight:600;color:var(--text-primary);">Hospital C</div>
+          <div style="color:var(--text-muted);font-size:0.85em;">local data</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:2px;">
+        <i data-lucide="arrow-up-down" style="width:1.1em;height:1.1em;color:var(--blue-mid);"></i>
+        <span style="font-size:0.58em;color:var(--text-muted);font-weight:500;letter-spacing:0.02em;">model parameters only</span>
+      </div>
+      <div style="background:var(--blue-light);border:1.5px solid var(--blue-mid);border-radius:10px;padding:11px 24px;font-size:0.68em;text-align:center;box-shadow:var(--shadow-sm);">
+        <i data-lucide="microscope" style="width:1.4em;height:1.4em;color:var(--blue-dark);display:block;margin:0 auto 4px;"></i>
+        <div style="font-weight:700;color:var(--blue-dark);">Researcher / Hub</div>
+        <div style="color:var(--blue-mid);font-size:0.88em;margin-top:2px;">aggregated parameters only</div>
+      </div>
+    </div>
+
+  </div>
+
+  <aside class="notes">
+    The problem that motivates the whole project: hospitals have valuable data but cannot share it. The solution is federated learning: we bring the model to the data. Each hospital trains locally and shares only model parameters, never patient data.
+  </aside>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 4 — Architecture Hub + Node
+═══════════════════════════════════════════ -->
+<section>
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:5px;">
+    <div class="bloc-tag tag-medinet" style="margin-bottom:0;">Medinet · 2/8</div>
+    <span style="font-size:0.6em;background:#F1F5F9;color:#94A3B8;padding:2px 8px;border-radius:99px;font-weight:600;">◀ context</span>
+  </div>
+  <h2>Medinet Architecture: Hub + Node</h2>
+  <div class="section-divider"></div>
+
+  <div class="arch-diagram" style="margin-top:18px;">
+
+    <!-- Hub -->
+    <div class="arch-box arch-hub">
+      <div class="arch-title" style="display:flex;align-items:center;gap:6px;">
+        <i data-lucide="monitor" class="icon-dark"></i> MediNetHub
+      </div>
+      <div style="font-size:0.7em;color:var(--text-secondary);line-height:2.1;margin-top:8px;">
+        <div>Visual model designer</div>
+        <div>Training configuration</div>
+        <div>Per-client monitoring</div>
+      </div>
+    </div>
+
+    <!-- Middle -->
+    <div class="arch-mid" style="min-width:110px;">
+      <div style="display:flex;flex-direction:column;gap:4px;align-items:center;">
+        <i data-lucide="arrow-right" style="width:1em;height:1em;color:#2563EB;"></i>
+        <i data-lucide="arrow-right" style="width:1em;height:1em;color:#2563EB;opacity:0.6;"></i>
+        <i data-lucide="arrow-right" style="width:1em;height:1em;color:#2563EB;opacity:0.3;"></i>
+      </div>
+      <div class="flower-badge" style="margin-top:8px;">Flower Server</div>
+      <div style="font-size:0.54em;color:var(--text-muted);text-align:center;margin:6px 0;line-height:1.4;">params only<br>no patient data</div>
+      <div class="dp-badge">
+        <i data-lucide="shield" style="width:0.85em;height:0.85em;"></i> Diff. Privacy
+      </div>
+    </div>
+
+    <!-- Nodes -->
+    <div style="flex:1;display:flex;flex-direction:column;gap:7px;">
+      <div style="font-size:0.56em;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;padding-bottom:4px;border-bottom:1px solid var(--border);">
+        MediNetNode — one per institution
+      </div>
+      <div class="arch-box arch-node" style="padding:10px 14px;flex:1;">
+        <div style="display:flex;align-items:center;gap:5px;font-size:0.82em;font-weight:700;color:var(--text-primary);">
+          <i data-lucide="building-2" style="color:#3730A3;width:0.9em;height:0.9em;"></i> Hospital A
+        </div>
+        <div style="font-size:0.66em;color:var(--text-muted);margin-top:3px;">local training · differential privacy</div>
+      </div>
+      <div class="arch-box arch-node" style="padding:10px 14px;flex:1;">
+        <div style="display:flex;align-items:center;gap:5px;font-size:0.82em;font-weight:700;color:var(--text-primary);">
+          <i data-lucide="building-2" style="color:#3730A3;width:0.9em;height:0.9em;"></i> Hospital B
+        </div>
+        <div style="font-size:0.66em;color:var(--text-muted);margin-top:3px;">data never leaves the institution</div>
+      </div>
+      <div class="arch-box arch-node" style="padding:10px 14px;flex:1;opacity:0.5;border-style:dashed;">
+        <div style="display:flex;align-items:center;gap:5px;font-size:0.82em;font-weight:700;color:var(--text-primary);">
+          <i data-lucide="building-2" style="color:#3730A3;width:0.9em;height:0.9em;"></i> Hospital C, D…
+        </div>
+        <div style="font-size:0.66em;color:var(--text-muted);margin-top:3px;">scalable to N institutions</div>
+      </div>
+    </div>
+
+  </div>
+
+  <aside class="notes">
+    The architecture has two parts. The Hub is used by the researcher: design models, configure federated training, monitor results. The Node is installed at each hospital. Communication happens via the Flower Server, transmitting only model parameters. All training incorporates Differential Privacy.
+  </aside>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 5 — MediNetHub
+═══════════════════════════════════════════ -->
+<section>
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:5px;">
+    <div class="bloc-tag tag-medinet" style="margin-bottom:0;">Medinet · 3/8</div>
+    <span style="font-size:0.6em;background:#F1F5F9;color:#94A3B8;padding:2px 8px;border-radius:99px;font-weight:600;">◀ context</span>
+  </div>
+  <h2>MediNetHub — The Researcher View</h2>
+  <div class="section-divider"></div>
+
+  <div class="two-col two-col-6-4" style="margin-top:14px; gap:24px;">
+    <!-- Left: model builder visual -->
+    <div>
+      <p style="font-size:0.72em;font-weight:700;color:var(--text-primary);margin-bottom:10px;display:flex;align-items:center;gap:5px;">
+        <i data-lucide="layout-panel-left" class="icon-blue"></i> Visual Model Builder — design layers without code
+      </p>
+      <!-- Mini model builder diagram -->
+      <div style="background:var(--bg-subtle);border:1px solid var(--border);border-radius:10px;padding:14px;display:flex;flex-direction:column;align-items:center;gap:4px;box-shadow:var(--shadow-sm);">
+        <div style="background:white;border:1.5px solid var(--blue-mid);border-radius:6px;padding:5px 18px;font-size:0.62em;font-weight:700;color:var(--blue-dark);width:100%;box-sizing:border-box;text-align:center;">Dense — 128 units · ReLU</div>
+        <i data-lucide="arrow-down" style="width:0.8em;height:0.8em;color:var(--text-muted);"></i>
+        <div style="background:white;border:1.5px solid var(--blue-mid);border-radius:6px;padding:5px 18px;font-size:0.62em;font-weight:700;color:var(--blue-dark);width:100%;box-sizing:border-box;text-align:center;">Dropout — 0.3</div>
+        <i data-lucide="arrow-down" style="width:0.8em;height:0.8em;color:var(--text-muted);"></i>
+        <div style="background:white;border:1.5px solid var(--blue-mid);border-radius:6px;padding:5px 18px;font-size:0.62em;font-weight:700;color:var(--blue-dark);width:100%;box-sizing:border-box;text-align:center;">Dense — 64 units · ReLU</div>
+        <i data-lucide="arrow-down" style="width:0.8em;height:0.8em;color:var(--text-muted);"></i>
+        <div style="background:#DBEAFE;border:1.5px solid #2563EB;border-radius:6px;padding:5px 18px;font-size:0.62em;font-weight:700;color:#1E3A8A;width:100%;box-sizing:border-box;text-align:center;">Output — 1 unit · Sigmoid</div>
+      </div>
+      <!-- V2 note -->
+      <div style="margin-top:10px;padding:8px 12px;background:#F0FDF4;border:1px solid #86EFAC;border-radius:7px;font-size:0.65em;display:flex;align-items:flex-start;gap:8px;">
+        <i data-lucide="git-branch" style="width:1em;height:1em;color:#16A34A;flex-shrink:0;margin-top:1px;"></i>
+        <div><strong style="color:#15803D;">V2 — in development:</strong> <span style="color:#166534;">graph-based models with arbitrary connections between layers (skip connections, residual blocks)</span></div>
+      </div>
+    </div>
+    <!-- Right: other features -->
+    <div>
+      <ul class="check-list">
+        <li>
+          <span class="ck-icon icon-blue"><i data-lucide="settings-2"></i></span>
+          <span class="ck-text"><strong>Federated Config</strong><br>Strategy, rounds, min. clients</span>
+        </li>
+        <li>
+          <span class="ck-icon icon-blue"><i data-lucide="bar-chart-2"></i></span>
+          <span class="ck-text"><strong>Per-client Monitoring</strong><br>Track each hospital's contribution</span>
+        </li>
+        <li>
+          <span class="ck-icon icon-blue"><i data-lucide="link-2"></i></span>
+          <span class="ck-text"><strong>Node Connections</strong><br>Manage connected hospitals</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="notes">
+    The Hub is the researcher's interface. The key feature is the visual model designer — you build the neural network layer by layer without writing a single line of code. In V2 we are adding support for graph-based models with arbitrary connections between layers, which enables skip connections and residual architectures.
+  </aside>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 6 — MediNetNode
+═══════════════════════════════════════════ -->
+<section>
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:5px;">
+    <div class="bloc-tag tag-medinet" style="margin-bottom:0;">Medinet · 4/8</div>
+    <span style="font-size:0.6em;background:#DCFCE7;color:#15803D;padding:2px 8px;border-radius:99px;font-weight:700;">✦ what's new</span>
+  </div>
+  <h2>MediNetNode — The Hospital View</h2>
+  <div class="section-divider"></div>
+
+  <div class="two-col two-col-6-4" style="margin-top:14px;">
+    <div class="screenshot-placeholder" style="min-height:280px;">
+      <div class="ph-icon icon-blue"><i data-lucide="building-2"></i></div>
+      <div class="ph-label">Screenshot — MediNetNode</div>
+      <div class="ph-hint">Dashboard · Datasets · Permissions</div>
+    </div>
+    <div>
+      <p style="font-size:0.75em; font-weight:700; color:#1a2340; margin-bottom:8px;">Role system:</p>
+      <ul class="check-list">
+        <li>
+          <span class="ck-icon icon-blue"><i data-lucide="shield-check"></i></span>
+          <span class="ck-text"><strong>Admin</strong><br>Full access: web + API</span>
+        </li>
+        <li>
+          <span class="ck-icon icon-blue"><i data-lucide="user"></i></span>
+          <span class="ck-text"><strong>Member</strong><br>Datasets &amp; training via web UI</span>
+        </li>
+        <li>
+          <span class="ck-icon icon-blue"><i data-lucide="flask-conical"></i></span>
+          <span class="ck-text"><strong>Researcher</strong><br>API access only — no web UI</span>
+        </li>
+        <li>
+          <span class="ck-icon icon-blue"><i data-lucide="clipboard-list"></i></span>
+          <span class="ck-text"><strong>Auditor</strong><br>Read-only log access</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="notes">
+    The hospital has full control via the Node. It can upload and manage datasets, decide which researchers have access, and monitor everything through a comprehensive audit trail. The four-role system provides granular permission control.
+  </aside>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 7 — DP at Scale: the problem
+═══════════════════════════════════════════ -->
+<section>
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:5px;">
+    <div class="bloc-tag tag-medinet" style="margin-bottom:0;">Medinet · 5/8</div>
+    <span style="font-size:0.6em;background:#DCFCE7;color:#15803D;padding:2px 8px;border-radius:99px;font-weight:700;">✦ what's new</span>
+  </div>
+  <h2>DP Protects — But What Happens at Scale?</h2>
+  <div class="section-divider"></div>
+
+  <div class="two-col two-col-5-5" style="margin-top:12px; gap:28px; align-items:flex-start;">
+
+    <!-- Left: narrative flow -->
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div style="display:flex;gap:10px;align-items:flex-start;">
+        <div style="flex-shrink:0;width:24px;height:24px;border-radius:50%;background:#DCFCE7;display:flex;align-items:center;justify-content:center;">
+          <i data-lucide="check" style="width:0.75em;height:0.75em;color:#16A34A;"></i>
+        </div>
+        <div>
+          <p style="font-weight:700;color:var(--text-primary);font-size:0.72em;margin:0 0 2px 0;">Differential Privacy — each round is safe</p>
+          <p style="font-size:0.64em;color:var(--text-secondary);margin:0;line-height:1.45;">Gaussian noise added to gradients. One round gives an adversary no useful information — privacy is mathematically guaranteed.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;">
+        <div style="flex-shrink:0;width:24px;height:24px;border-radius:50%;background:#FEF3C7;display:flex;align-items:center;justify-content:center;">
+          <i data-lucide="repeat" style="width:0.75em;height:0.75em;color:#D97706;"></i>
+        </div>
+        <div>
+          <p style="font-weight:700;color:var(--text-primary);font-size:0.72em;margin:0 0 2px 0;">But privacy cost ε accumulates over rounds</p>
+          <p style="font-size:0.64em;color:var(--text-secondary);margin:0;line-height:1.45;">Each participation costs ε privacy units. Run 100 rounds, 1000 rounds… the accumulated cost Σεᵢ grows without bound.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;">
+        <div style="flex-shrink:0;width:24px;height:24px;border-radius:50%;background:#FEE2E2;display:flex;align-items:center;justify-content:center;">
+          <i data-lucide="alert-triangle" style="width:0.75em;height:0.75em;color:#DC2626;"></i>
+        </div>
+        <div>
+          <p style="font-weight:700;color:var(--text-primary);font-size:0.72em;margin:0 0 2px 0;">Model inversion becomes feasible</p>
+          <p style="font-size:0.64em;color:var(--text-secondary);margin:0;line-height:1.45;">A determined adversary accumulating enough gradient updates can reconstruct patient-level data. The "safe per round" guarantee no longer holds globally.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: budget drain visual -->
+    <div style="display:flex;flex-direction:column;gap:7px;">
+      <div style="font-size:0.56em;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1px;">Privacy budget — Hospital A</div>
+      <div style="display:flex;align-items:center;gap:8px;font-size:0.6em;">
+        <span style="min-width:58px;font-weight:700;color:#16A34A;">Round 1</span>
+        <div style="flex:1;background:#F1F5F9;border-radius:3px;height:8px;overflow:hidden;">
+          <div style="background:#22C55E;height:100%;width:90%;border-radius:3px;"></div>
+        </div>
+        <span style="color:var(--text-muted);min-width:48px;">B = 0.90</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;font-size:0.6em;">
+        <span style="min-width:58px;font-weight:700;color:#D97706;">Round 10</span>
+        <div style="flex:1;background:#F1F5F9;border-radius:3px;height:8px;overflow:hidden;">
+          <div style="background:#EAB308;height:100%;width:55%;border-radius:3px;"></div>
+        </div>
+        <span style="color:var(--text-muted);min-width:48px;">B = 0.55</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;font-size:0.6em;">
+        <span style="min-width:58px;font-weight:700;color:#EA580C;">Round 50</span>
+        <div style="flex:1;background:#F1F5F9;border-radius:3px;height:8px;overflow:hidden;">
+          <div style="background:#F97316;height:100%;width:20%;border-radius:3px;"></div>
+        </div>
+        <span style="color:var(--text-muted);min-width:48px;">B = 0.20</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;font-size:0.6em;">
+        <span style="min-width:58px;font-weight:700;color:#DC2626;">Round 100</span>
+        <div style="flex:1;background:#FEE2E2;border-radius:3px;height:8px;overflow:hidden;">
+          <div style="background:#EF4444;height:100%;width:4%;border-radius:3px;"></div>
+        </div>
+        <span style="color:#DC2626;font-weight:700;min-width:48px;">B ≈ 0 🚨</span>
+      </div>
+      <div style="margin-top:4px;padding:7px 10px;background:#FEF2F2;border:1px solid #FECACA;border-radius:7px;font-size:0.57em;color:#991B1B;display:flex;align-items:flex-start;gap:6px;">
+        <i data-lucide="alert-triangle" style="width:0.9em;height:0.9em;flex-shrink:0;margin-top:1px;"></i>
+        <span>When B → 0, accumulated gradients can be used for model inversion. Patient data is at risk.</span>
+      </div>
+      <div style="padding:7px 10px;background:#DCFCE7;border:1px solid #86EFAC;border-radius:7px;font-size:0.57em;color:#166534;display:flex;align-items:flex-start;gap:6px;">
+        <i data-lucide="shield-check" style="width:0.9em;height:0.9em;flex-shrink:0;margin-top:1px;"></i>
+        <span><strong>v2 Budget Policy:</strong> each client has a fixed budget. When exhausted, they are excluded automatically.</span>
+      </div>
+    </div>
+
+  </div>
+
+  <aside class="notes">
+    This is the key insight that motivated v2. Standard DP protects each round, but privacy cost accumulates. An adversary who collects enough gradient updates — across many rounds — can start reversing the model to extract patient data. We needed to limit total participation, not just per-round privacy. That's the Budget Policy.
+  </aside>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 8 — Budget Policy
+═══════════════════════════════════════════ -->
+<section>
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:5px;">
+    <div class="bloc-tag tag-medinet" style="margin-bottom:0;">Medinet · 6/8</div>
+    <span style="font-size:0.6em;background:#DCFCE7;color:#15803D;padding:2px 8px;border-radius:99px;font-weight:700;">✦ what's new</span>
+  </div>
+  <h2>The Key Innovation: Budget Policy (v2)</h2>
+  <div class="section-divider"></div>
+
+  <div class="two-col two-col-5-5" style="margin-top:14px; gap:16px;">
+    <div>
+      <!-- How the budget is assigned -->
+      <p style="font-size:0.7em;font-weight:700;color:var(--text-primary);margin:0 0 8px 0;display:flex;align-items:center;gap:5px;">
+        <i data-lucide="cpu" class="icon-blue"></i> Model deployment → privacy configuration
+      </p>
+      <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:12px;">
+        <div style="display:flex;gap:9px;align-items:flex-start;font-size:0.66em;">
+          <div style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:#DBEAFE;display:flex;align-items:center;justify-content:center;font-weight:700;color:#1E3A8A;font-size:0.85em;">1</div>
+          <div style="color:var(--text-secondary);line-height:1.4;">When deploying a model, the admin configures the <strong>privacy budget ε</strong> for that model</div>
+        </div>
+        <div style="display:flex;gap:9px;align-items:flex-start;font-size:0.66em;">
+          <div style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:#DBEAFE;display:flex;align-items:center;justify-content:center;font-weight:700;color:#1E3A8A;font-size:0.85em;">2</div>
+          <div style="color:var(--text-secondary);line-height:1.4;">
+            The platform suggests ε by <strong>medical domain</strong> — e.g. oncology ε = 1.0 · cardiology ε = 2.0 · research ε = 8.0
+          </div>
+        </div>
+        <div style="display:flex;gap:9px;align-items:flex-start;font-size:0.66em;">
+          <div style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:#DBEAFE;display:flex;align-items:center;justify-content:center;font-weight:700;color:#1E3A8A;font-size:0.85em;">3</div>
+          <div style="color:var(--text-secondary);line-height:1.4;">Each training round deducts \(\varepsilon_i(t)\) — when B → 0, the client is <strong>excluded automatically</strong></div>
+        </div>
+      </div>
+      <div class="formula-box" style="padding:10px 16px;">
+        <div class="formula-label">Budget update per round for client \(i\)</div>
+        <div class="formula-text" style="font-size:0.82em;">$$B_i(t) = B_i(t-1) - \varepsilon_i(t)$$</div>
+        <div style="font-size:0.58em; color:var(--text-muted); margin-top:4px;">
+          \(\varepsilon_i(t)\) — privacy cost of round \(t\) &nbsp;·&nbsp; participates iff \(B_i(t) > 0\)
+        </div>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:0.75em; font-weight:700; color:#1a2340; margin-bottom:8px;">Client status in a round:</p>
+      <div class="budget-diagram" style="flex-direction:column;">
+        <div class="budget-client budget-ok">
+          <div class="bc-title" style="display:flex;align-items:center;gap:5px;">
+            <i data-lucide="building-2" style="width:0.9em;height:0.9em;"></i> Hospital A
+          </div>
+          <div class="budget-bar-wrap"><div class="budget-bar bar-green"></div></div>
+          <div class="bc-label">Budget remaining: 80% → <strong>Participates</strong></div>
+        </div>
+        <div class="budget-client budget-low">
+          <div class="bc-title" style="display:flex;align-items:center;gap:5px;">
+            <i data-lucide="building-2" style="width:0.9em;height:0.9em;"></i> Hospital B
+          </div>
+          <div class="budget-bar-wrap"><div class="budget-bar bar-yellow"></div></div>
+          <div class="bc-label">Budget remaining: 35% → <strong>Limited participation</strong></div>
+        </div>
+        <div class="budget-client budget-out">
+          <div class="bc-title" style="display:flex;align-items:center;gap:5px;">
+            <i data-lucide="building-2" style="width:0.9em;height:0.9em;"></i> Hospital C
+          </div>
+          <div class="budget-bar-wrap"><div class="budget-bar bar-red"></div></div>
+          <div class="bc-label">Budget remaining: 5% → <strong>Excluded from round</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="notes">
+    Medinet v2 introduces the Budget Policy. Each client has an assigned privacy budget. If a hospital has participated heavily and its budget nears the limit, the system automatically excludes it. This adapts participation to the real sensitivity of each dataset.
+  </aside>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 8 — Paper Bioinformatics
+═══════════════════════════════════════════ -->
+<section>
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:5px;">
+    <div class="bloc-tag tag-medinet" style="margin-bottom:0;">Medinet · 7/8</div>
+    <span style="font-size:0.6em;background:#DCFCE7;color:#15803D;padding:2px 8px;border-radius:99px;font-weight:700;">✦ what's new</span>
+  </div>
+  <h2>Paper in Bioinformatics</h2>
+  <div class="section-divider"></div>
+
+  <div class="two-col two-col-5-5" style="margin-top:18px;">
+    <div class="paper-card">
+      <div class="paper-journal" style="display:flex;align-items:center;gap:5px;">
+        <i data-lucide="file-text" class="icon-blue"></i>
+        Bioinformatics · Oxford Academic
+      </div>
+      <div class="paper-title">
+        MediNet: A Privacy-Preserving Federated Learning Platform with Budget-Aware Differential Privacy for Medical Research
+      </div>
+      <div class="paper-authors">
+        Ramon Mateo Navarro, Juan R. González<br>
+        <em>ISGlobal</em>
+      </div>
+      <span class="status-badge status-pending">
+        <i data-lucide="clock" style="width:0.85em;height:0.85em;vertical-align:-0.1em;"></i>
+        Resubmission pending
+      </span>
+    </div>
+    <div>
+      <ul class="check-list">
+        <li>
+          <span class="ck-icon icon-blue"><i data-lucide="send"></i></span>
+          <span class="ck-text">Submitted to <strong>Bioinformatics</strong></span>
+        </li>
+        <li>
+          <span class="ck-icon icon-red"><i data-lucide="x-circle"></i></span>
+          <span class="ck-text">Rejected due to <strong>formatting issues</strong></span>
+        </li>
+        <li>
+          <span class="ck-icon icon-green"><i data-lucide="check-circle-2"></i></span>
+          <span class="ck-text">Appeal <strong>accepted</strong></span>
+        </li>
+        <li>
+          <span class="ck-icon icon-indigo"><i data-lucide="pencil-line"></i></span>
+          <span class="ck-text">Incorporating <strong>reviewer corrections</strong></span>
+        </li>
+        <li>
+          <span class="ck-icon icon-blue"><i data-lucide="target"></i></span>
+          <span class="ck-text">Goal: resubmit shortly</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="notes">
+    All the work on Medinet and the Budget Policy has been written into a manuscript for Bioinformatics. It was initially rejected for formatting issues, but we appealed and were accepted to resubmit, incorporating reviewer corrections.
+  </aside>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 9 — Medinet status
+═══════════════════════════════════════════ -->
+<section>
+  <div class="bloc-tag tag-medinet">Medinet · 8/8</div>
+  <h2>Medinet — Current Status</h2>
+  <div class="section-divider"></div>
+
+  <div class="two-col two-col-5-5" style="margin-top:16px;">
+    <ul class="check-list">
+      <li>
+        <span class="ck-icon icon-green"><i data-lucide="check-circle-2"></i></span>
+        <span class="ck-text"><strong>Hub &amp; Node operational</strong><br>Docker, full deployment</span>
+      </li>
+      <li>
+        <span class="ck-icon icon-green"><i data-lucide="check-circle-2"></i></span>
+        <span class="ck-text"><strong>Visual Model Designer</strong><br>Sequential models without code</span>
+      </li>
+      <li>
+        <span class="ck-icon icon-green"><i data-lucide="check-circle-2"></i></span>
+        <span class="ck-text"><strong>Budget Policy implemented</strong><br>v2 with Differential Privacy</span>
+      </li>
+      <li>
+        <span class="ck-icon icon-green"><i data-lucide="check-circle-2"></i></span>
+        <span class="ck-text"><strong>Integration tests</strong><br>Core scenario coverage</span>
+      </li>
+      <li>
+        <span class="ck-icon icon-green"><i data-lucide="check-circle-2"></i></span>
+        <span class="ck-text"><strong>Public documentation</strong><br>isglobal-brge.github.io/MediNet</span>
+      </li>
+      <li>
+        <span class="ck-icon icon-indigo"><i data-lucide="loader-2"></i></span>
+        <span class="ck-text"><strong>Paper in final preparation</strong><br>Resubmission to Bioinformatics</span>
+      </li>
+      <li>
+        <span class="ck-icon icon-indigo"><i data-lucide="git-branch"></i></span>
+        <span class="ck-text"><strong>V2 Model Builder</strong><br>Graph-based models with layer connections</span>
+      </li>
+    </ul>
+    <div class="highlight-box" style="margin-top:0;">
+      <div class="hb-title" style="display:flex;align-items:center;gap:6px;">
+        <i data-lucide="layers" class="icon-blue"></i> A solid foundation
+      </div>
+      <div class="hb-body">
+        The platform is operational and ready to build upon. Medinet validates that the architecture is correct and scalable.
+        <br><br>
+        <strong>Next:</strong> resubmit the paper · V2 graph models in development.
+      </div>
+    </div>
+  </div>
+
+  <aside class="notes">
+    Medinet is a functional, solid platform. We can say that Medinet as a base platform is a closed chapter — in the good sense: solid and ready to build upon.
+  </aside>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 10 — Transition to EPIFLARE
+═══════════════════════════════════════════ -->
+<section data-background-color="#1E3A8A">
+  <div style="display:flex; flex-direction:column; justify-content:center; align-items:flex-start; height:500px; gap:20px;">
+    <p style="color:rgba(255,255,255,0.6); font-size:0.8em; margin:0;">A solid platform enables building specialised applications</p>
+    <h2 style="color:white; font-size:2em; margin:0; line-height:1.2;">First application:</h2>
+    <div style="display:flex; align-items:center; gap:16px;">
+      <img src="assets/epiflare_mark.png" alt="" style="height:1.9em; width:auto;">
+      <span style="color:#93C5FD; font-size:2em; font-weight:800; letter-spacing:-0.03em;">EPIFLARE</span>
+    </div>
+    <p style="color:rgba(255,255,255,0.7); font-size:0.85em; margin:0;">
+      Specialised for geneticists working with epigenomics data
+    </p>
+  </div>
+  <aside class="notes">
+    Once we had a solid platform, the natural question was: can we specialise it for a specific use case? We took the Medinet core and built EPIFLARE on top of it, an application designed for geneticists working with epigenomics data.
+  </aside>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 11 — What is EPIFLARE
+═══════════════════════════════════════════ -->
+<section>
+  <div style="display:flex;align-items:center;gap:14px;margin-bottom:5px;">
+    <div class="bloc-tag tag-epiflare" style="margin-bottom:0;">EPIFLARE · 1/5</div>
+    <img src="assets/epiflare_logo.png" alt="EPIFLARE" style="height:22px;object-fit:contain;">
+  </div>
+  <h2>What is EPIFLARE?</h2>
+  <div class="section-divider"></div>
+
+  <div class="two-col two-col-5-5" style="margin-top:20px; gap:36px; align-items:center;">
+
+    <!-- Left: context + role -->
+    <div style="display:flex;flex-direction:column;gap:18px;">
+      <div style="display:flex;gap:14px;align-items:flex-start;">
+        <div style="flex-shrink:0;width:30px;height:30px;border-radius:50%;background:#EEF2FF;display:flex;align-items:center;justify-content:center;">
+          <i data-lucide="dna" style="width:0.9em;height:0.9em;color:#6366F1;"></i>
+        </div>
+        <div>
+          <p style="font-weight:700;color:var(--text-primary);font-size:0.82em;margin:0 0 4px 0;">Use case: Epigenomics</p>
+          <p style="font-size:0.74em;color:var(--text-secondary);margin:0;line-height:1.55;">A geneticist has a model trained on <strong>DNA methylation data</strong> (EPIC arrays) and wants to apply it to new patients — <strong>without sending data outside</strong> the institution.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:14px;align-items:flex-start;">
+        <div style="flex-shrink:0;width:30px;height:30px;border-radius:50%;background:#EEF2FF;display:flex;align-items:center;justify-content:center;">
+          <i data-lucide="user-plus" style="width:0.9em;height:0.9em;color:#6366F1;"></i>
+        </div>
+        <div>
+          <p style="font-weight:700;color:var(--text-primary);font-size:0.82em;margin:0 0 4px 0;">New role: Geneticist</p>
+          <p style="font-size:0.74em;color:var(--text-secondary);margin:0;line-height:1.55;">Uploads patient methylation data (CSV), loads ONNX models, and gets semantic per-patient predictions — all within the institution.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: compact workflow -->
+    <div style="display:flex;flex-direction:column;gap:9px;">
+      <div style="display:flex;align-items:center;gap:10px;font-size:0.72em;">
+        <div style="background:#EEF2FF;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;color:#3730A3;">1</div>
+        <span>Upload <strong>methylation CSV</strong> (samples × CpGs)</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;font-size:0.72em;">
+        <div style="background:#EEF2FF;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;color:#3730A3;">2</div>
+        <span>Load <strong>ONNX model</strong> + define required CpGs</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;font-size:0.72em;">
+        <div style="background:#EEF2FF;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;color:#3730A3;">3</div>
+        <span><strong>Auto-matching</strong> — software filters CpGs for each patient</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;font-size:0.72em;">
+        <div style="background:#EEF2FF;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;color:#3730A3;">4</div>
+        <span>Configure <strong>semantic labels</strong> per output class</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;font-size:0.72em;">
+        <div style="background:#EEF2FF;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;color:#3730A3;">5</div>
+        <span>View <strong>per-patient predictions</strong> with confidence</span>
+      </div>
+    </div>
+
+  </div>
+
+  <aside class="notes">
+    EPIFLARE targets a different workflow. Instead of federated training, the geneticist already has a pre-trained model and wants to apply it to new patients within their own platform. ONNX is a standard interoperable format compatible with PyTorch, scikit-learn, etc.
+  </aside>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 12 — Semantic predictions
+═══════════════════════════════════════════ -->
+<section>
+  <div style="display:flex;align-items:center;gap:14px;margin-bottom:5px;">
+    <div class="bloc-tag tag-epiflare" style="margin-bottom:0;">EPIFLARE · 2/5</div>
+    <img src="assets/epiflare_logo.png" alt="EPIFLARE" style="height:22px;object-fit:contain;">
+  </div>
+  <h2>Semantic Predictions on Patients</h2>
+  <div class="section-divider"></div>
+
+  <div class="two-col two-col-6-4" style="margin-top:14px;">
+    <div>
+      <table class="predictions-table">
+        <thead>
+          <tr>
+            <th>Sample (Patient)</th>
+            <th>CpGs processed</th>
+            <th>Prediction</th>
+            <th>Confidence</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GSM001_sample</td>
+            <td>850,000</td>
+            <td><span class="pred-badge pred-healthy"><i data-lucide="check" style="width:0.85em;height:0.85em;vertical-align:-0.1em;"></i> Healthy</span></td>
+            <td>0.94</td>
+          </tr>
+          <tr>
+            <td>GSM002_sample</td>
+            <td>850,000</td>
+            <td><span class="pred-badge pred-risk"><i data-lucide="alert-triangle" style="width:0.85em;height:0.85em;vertical-align:-0.1em;"></i> At Risk</span></td>
+            <td>0.87</td>
+          </tr>
+          <tr>
+            <td>GSM003_sample</td>
+            <td>850,000</td>
+            <td><span class="pred-badge pred-healthy"><i data-lucide="check" style="width:0.85em;height:0.85em;vertical-align:-0.1em;"></i> Healthy</span></td>
+            <td>0.91</td>
+          </tr>
+          <tr>
+            <td>GSM004_sample</td>
+            <td>850,000</td>
+            <td><span class="pred-badge pred-risk"><i data-lucide="alert-triangle" style="width:0.85em;height:0.85em;vertical-align:-0.1em;"></i> At Risk</span></td>
+            <td>0.76</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <div class="highlight-box" style="border-color:#6366F1; background:#EEF2FF;">
+        <div class="hb-title" style="color:#3730A3; display:flex;align-items:center;gap:6px;">
+          <i data-lucide="sliders-horizontal" class="icon-indigo"></i> Configurable semantic output
+        </div>
+        <div class="hb-body" style="font-size:0.9em;">
+          <ul style="padding-left:14px; margin:0; color:#4338CA;">
+            <li>Custom labels per class</li>
+            <li>Per-class colour coding</li>
+            <li>Bootstrap icon selector</li>
+            <li>Adjustable classification threshold</li>
+          </ul>
+        </div>
+      </div>
+      <p style="font-size:0.7em; color:#64748B; margin-top:8px;">
+        Instead of raw "0" or "1", the geneticist sees meaningful labels. Communicating results clearly is as important as the result itself.
+      </p>
+    </div>
+  </div>
+
+  <aside class="notes">
+    Instead of showing the geneticist a "0" or "1", the platform displays comprehensible labels. The geneticist can configure the labels, colours, and the classification threshold.
+  </aside>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 13 — Security
+═══════════════════════════════════════════ -->
+<section>
+  <div style="display:flex;align-items:center;gap:14px;margin-bottom:5px;">
+    <div class="bloc-tag tag-epiflare" style="margin-bottom:0;">EPIFLARE · 3/5</div>
+    <img src="assets/epiflare_logo.png" alt="EPIFLARE" style="height:22px;object-fit:contain;">
+  </div>
+  <h2>EPIFLARE in Action</h2>
+  <div class="section-divider"></div>
+
+  <div class="two-col two-col-5-5" style="margin-top:14px; gap:20px; align-items:flex-start;">
+    <!-- Left screenshot -->
+    <div>
+      <div style="font-size:0.6em;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Patient data upload &amp; dataset management</div>
+      <div class="screenshot-placeholder" style="min-height:220px;">
+        <div class="ph-icon icon-indigo"><i data-lucide="file-spreadsheet"></i></div>
+        <div class="ph-label">Screenshot — Data Upload</div>
+        <div class="ph-hint">CSV import · CpG validation · Dataset registry</div>
+      </div>
+    </div>
+    <!-- Right screenshot -->
+    <div>
+      <div style="font-size:0.6em;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Prediction results — per patient</div>
+      <div class="screenshot-placeholder" style="min-height:220px;">
+        <div class="ph-icon icon-indigo"><i data-lucide="activity"></i></div>
+        <div class="ph-label">Screenshot — Predictions View</div>
+        <div class="ph-hint">Semantic labels · Confidence · Configurable output</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Technical stack note -->
+  <div style="display:flex;gap:20px;margin-top:12px;">
+    <div style="display:flex;align-items:center;gap:6px;font-size:0.62em;color:var(--text-secondary);">
+      <i data-lucide="layers" style="width:0.9em;height:0.9em;color:#6366F1;"></i>
+      <span>Built on <strong>Medinet</strong> core — no platform rebuild</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;font-size:0.62em;color:var(--text-secondary);">
+      <i data-lucide="user-check" style="width:0.9em;height:0.9em;color:#6366F1;"></i>
+      <span>New <strong>Geneticist</strong> role + dedicated dashboard</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;font-size:0.62em;color:var(--text-secondary);">
+      <i data-lucide="cpu" style="width:0.9em;height:0.9em;color:#6366F1;"></i>
+      <span><strong>ONNX runtime</strong> — interoperable with PyTorch, sklearn</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;font-size:0.62em;color:var(--text-secondary);">
+      <i data-lucide="shield-check" style="width:0.9em;height:0.9em;color:#6366F1;"></i>
+      <span>Formal <strong>security audit</strong> completed</span>
+    </div>
+  </div>
+
+  <aside class="notes">
+    Here you can see the two main views of EPIFLARE. On the left, the data upload and dataset management interface where the geneticist imports the methylation CSV and validates the CpGs. On the right, the prediction results view with the semantic per-patient output.
+  </aside>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 14 — EPIFLARE roadmap
+═══════════════════════════════════════════ -->
+<section>
+  <div style="display:flex;align-items:center;gap:14px;margin-bottom:5px;">
+    <div class="bloc-tag tag-epiflare" style="margin-bottom:0;">EPIFLARE · 4/5</div>
+    <img src="assets/epiflare_logo.png" alt="EPIFLARE" style="height:22px;object-fit:contain;">
+  </div>
+  <h2>Status &amp; Next Steps — EPIFLARE</h2>
+  <div class="section-divider"></div>
+
+  <div class="two-col two-col-5-5" style="margin-top:14px;">
+    <div>
+      <p style="font-size:0.75em; font-weight:700; color:#3730A3; margin-bottom:8px; display:flex;align-items:center;gap:5px;">
+        <i data-lucide="check-circle-2" class="icon-green"></i> Completed (v0.2)
+      </p>
+      <ul class="check-list">
+        <li><span class="ck-icon icon-green"><i data-lucide="check-circle-2"></i></span><span class="ck-text"><strong>Web interface</strong> — Docker, full deployment</span></li>
+        <li><span class="ck-icon icon-green"><i data-lucide="check-circle-2"></i></span><span class="ck-text"><strong>ONNX inference</strong> — local predictions</span></li>
+        <li><span class="ck-icon icon-green"><i data-lucide="check-circle-2"></i></span><span class="ck-text"><strong>Semantic output</strong> — complete MVP</span></li>
+        <li><span class="ck-icon icon-green"><i data-lucide="check-circle-2"></i></span><span class="ck-text"><strong>Geneticist role</strong> — CSV &amp; ONNX upload</span></li>
+        <li><span class="ck-icon icon-green"><i data-lucide="check-circle-2"></i></span><span class="ck-text"><strong>Security stack</strong> — formal audit done</span></li>
+      </ul>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <p style="font-size:0.75em; font-weight:700; color:#6366F1; margin-bottom:2px; display:flex;align-items:center;gap:5px;">
+        <i data-lucide="clock" class="icon-indigo"></i> Next steps
+      </p>
+      <ul class="check-list" style="margin-bottom:4px;">
+        <li><span class="ck-icon icon-indigo"><i data-lucide="clock"></i></span><span class="ck-text"><strong>FL for SVM / Random Forest</strong><br>Classical epigenomics methods</span></li>
+        <li><span class="ck-icon icon-indigo"><i data-lucide="clock"></i></span><span class="ck-text"><strong>API-based inference</strong><br>Direct from Node, no web UI</span></li>
+        <li><span class="ck-icon icon-indigo"><i data-lucide="clock"></i></span><span class="ck-text"><strong>Security hardening</strong><br>2FA, HTTPS, email verification</span></li>
+      </ul>
+      <div style="padding:10px 13px;background:#EEF2FF;border:1px solid #C7D2FE;border-radius:8px;font-size:0.66em;display:flex;align-items:flex-start;gap:8px;">
+        <i data-lucide="layers" style="width:1em;height:1em;color:#6366F1;flex-shrink:0;margin-top:1px;"></i>
+        <div style="color:#3730A3;line-height:1.5;">
+          <strong>Private application — not published.</strong><br>
+          EPIFLARE is the first proof that Medinet's architecture is portable and extensible: a domain-specific application built on the same platform without rebuilding from scratch.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="notes">
+    EPIFLARE is not heading toward a publication of its own — it's a private application for real use. Its value is proving that Medinet works in practice: you can take the base platform and specialise it for a specific domain, in this case epigenomics, without redesigning anything.
+  </aside>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 15 — EPIFLARE Smart CpG Matching
+═══════════════════════════════════════════ -->
+<section>
+  <div style="display:flex;align-items:center;gap:14px;margin-bottom:5px;">
+    <div class="bloc-tag tag-epiflare" style="margin-bottom:0;">EPIFLARE · 5/5</div>
+    <img src="assets/epiflare_logo.png" alt="EPIFLARE" style="height:22px;object-fit:contain;">
+  </div>
+  <h2>Smart CpG Matching &amp; Inference</h2>
+  <div class="section-divider"></div>
+
+  <!-- 4-step horizontal flow -->
+  <div style="display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;align-items:center;gap:0;margin-top:22px;">
+
+    <!-- Step 1 -->
+    <div style="background:var(--bg-subtle);border:1px solid var(--border);border-radius:10px;padding:14px 12px;text-align:center;box-shadow:var(--shadow-sm);">
+      <div style="width:28px;height:28px;border-radius:50%;background:#EEF2FF;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;font-weight:800;font-size:0.75em;color:#3730A3;">1</div>
+      <i data-lucide="upload" style="width:1.3em;height:1.3em;color:#6366F1;display:block;margin:0 auto 6px;"></i>
+      <p style="font-size:0.64em;font-weight:700;color:var(--text-primary);margin:0 0 4px 0;">Upload model</p>
+      <p style="font-size:0.58em;color:var(--text-muted);margin:0;line-height:1.45;">ONNX format<br>+ CpG feature list</p>
+    </div>
+
+    <i data-lucide="chevron-right" style="width:1.1em;height:1.1em;color:var(--text-muted);margin:0 8px;"></i>
+
+    <!-- Step 2 -->
+    <div style="background:var(--bg-subtle);border:1px solid var(--border);border-radius:10px;padding:14px 12px;text-align:center;box-shadow:var(--shadow-sm);">
+      <div style="width:28px;height:28px;border-radius:50%;background:#EEF2FF;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;font-weight:800;font-size:0.75em;color:#3730A3;">2</div>
+      <i data-lucide="file-spreadsheet" style="width:1.3em;height:1.3em;color:#6366F1;display:block;margin:0 auto 6px;"></i>
+      <p style="font-size:0.64em;font-weight:700;color:var(--text-primary);margin:0 0 4px 0;">Upload patient data</p>
+      <p style="font-size:0.58em;color:var(--text-muted);margin:0;line-height:1.45;">CSV — samples × CpGs<br>(EPIC array, 850 K CpGs)</p>
+    </div>
+
+    <i data-lucide="chevron-right" style="width:1.1em;height:1.1em;color:var(--text-muted);margin:0 8px;"></i>
+
+    <!-- Step 3 — the key step -->
+    <div style="background:#EEF2FF;border:2px solid #6366F1;border-radius:10px;padding:14px 12px;text-align:center;box-shadow:var(--shadow-sm);">
+      <div style="width:28px;height:28px;border-radius:50%;background:#6366F1;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;font-weight:800;font-size:0.75em;color:white;">3</div>
+      <i data-lucide="filter" style="width:1.3em;height:1.3em;color:#4338CA;display:block;margin:0 auto 6px;"></i>
+      <p style="font-size:0.64em;font-weight:700;color:#3730A3;margin:0 0 4px 0;">Auto CpG matching</p>
+      <p style="font-size:0.58em;color:#4338CA;margin:0;line-height:1.45;">Software finds the model's<br>CpGs in each patient · auto</p>
+    </div>
+
+    <i data-lucide="chevron-right" style="width:1.1em;height:1.1em;color:var(--text-muted);margin:0 8px;"></i>
+
+    <!-- Step 4 -->
+    <div style="background:var(--bg-subtle);border:1px solid var(--border);border-radius:10px;padding:14px 12px;text-align:center;box-shadow:var(--shadow-sm);">
+      <div style="width:28px;height:28px;border-radius:50%;background:#EEF2FF;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;font-weight:800;font-size:0.75em;color:#3730A3;">4</div>
+      <i data-lucide="activity" style="width:1.3em;height:1.3em;color:#6366F1;display:block;margin:0 auto 6px;"></i>
+      <p style="font-size:0.64em;font-weight:700;color:var(--text-primary);margin:0 0 4px 0;">Per-patient prediction</p>
+      <p style="font-size:0.58em;color:var(--text-muted);margin:0;line-height:1.45;">Semantic labels<br>+ confidence score</p>
+    </div>
+
+  </div>
+
+  <!-- Key insight note -->
+  <div style="margin-top:18px;padding:10px 16px;background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;font-size:0.68em;display:flex;align-items:flex-start;gap:10px;">
+    <i data-lucide="lightbulb" style="width:1.1em;height:1.1em;color:#16A34A;flex-shrink:0;margin-top:1px;"></i>
+    <div style="color:#166534;">
+      <strong>Key insight:</strong> models declare the CpG features they need. The platform automatically intersects those with the patient's available CpGs — no manual preprocessing required by the geneticist.
+    </div>
+  </div>
+
+  <aside class="notes">
+    This is the key technical detail: when a model is uploaded, the geneticist specifies which CpG sites the model was trained on. Then, when patient data arrives, the platform automatically finds those specific CpGs from each patient's EPIC array — which has 850,000 CpGs but the model may only need a few hundred. This automatic matching is transparent to the geneticist.
+  </aside>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE — Transition to Glucose App
+═══════════════════════════════════════════ -->
+<section data-background-color="#0F766E">
+  <div style="display:flex; flex-direction:column; justify-content:center; align-items:flex-start; height:500px; gap:18px;">
+    <p style="color:rgba(255,255,255,0.6); font-size:0.8em; margin:0;">A second research line — built on the same platform</p>
+    <h2 style="color:white; font-size:2em; margin:0; line-height:1.2;">Glucose Monitoring<br>in Breast Cancer</h2>
+    <div style="width:48px;height:3px;background:rgba(255,255,255,0.35);border-radius:2px;"></div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div style="display:flex;align-items:flex-start;gap:12px;">
+        <i data-lucide="heart-pulse" style="width:1.1em;height:1.1em;color:#5EEAD4;flex-shrink:0;margin-top:2px;"></i>
+        <p style="color:rgba(255,255,255,0.85); font-size:0.82em; margin:0; line-height:1.5;">
+          Growing evidence that <strong style="color:white;">glycaemic variability</strong> — patterns over time, not just point values — may be a relevant biomarker in breast cancer progression.
+        </p>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;">
+        <i data-lucide="smartphone" style="width:1.1em;height:1.1em;color:#5EEAD4;flex-shrink:0;margin-top:2px;"></i>
+        <p style="color:rgba(255,255,255,0.85); font-size:0.82em; margin:0; line-height:1.5;">
+          We are building an app that captures <strong style="color:white;">continuous glucose data</strong> from patients using consumer CGM sensors — accessible, low-cost, in their everyday context.
+        </p>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+    After EPIFLARE, the platform enables a second application in a completely different domain. The clinical hypothesis is that glycaemic variability — how glucose fluctuates over the day — could be a biomarker for breast cancer progression. The challenge is capturing this data comfortably and at low cost, which is what the glucose app addresses.
+  </aside>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 16 — Glucose clinical context
+═══════════════════════════════════════════ -->
+<section>
+  <div class="bloc-tag tag-glucosa">Glucose App · 1/3</div>
+  <h2>Glucose Monitoring in Breast Cancer</h2>
+  <div class="section-divider"></div>
+
+  <div class="two-col two-col-5-5" style="margin-top:14px;">
+    <div>
+      <div class="highlight-box" style="border-color:#14B8A6; background:#F0FDFA;">
+        <div class="hb-title" style="color:#0F766E; display:flex;align-items:center;gap:6px;">
+          <i data-lucide="stethoscope" class="icon-teal"></i> Clinical motivation
+        </div>
+        <div class="hb-body">
+          Growing evidence that <strong>glycaemic variability</strong> — not just point values, but patterns over time — may be a relevant <strong>biomarker</strong> in breast cancer progression.
+        </div>
+      </div>
+      <div class="highlight-box" style="margin-top:10px; border-color:#14B8A6; background:#F0FDFA;">
+        <div class="hb-title" style="color:#0F766E; display:flex;align-items:center;gap:6px;">
+          <i data-lucide="help-circle" class="icon-teal"></i> The challenge
+        </div>
+        <div class="hb-body">
+          Obtaining continuous glucose monitoring (CGM) data from patients comfortably, at low cost, in their everyday context.
+        </div>
+      </div>
+    </div>
+    <div style="background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:10px; padding:16px;">
+      <p style="font-size:0.75em; font-weight:700; color:#1a2340; margin-bottom:10px; display:flex;align-items:center;gap:5px;">
+        <i data-lucide="list-checks" class="icon-teal"></i> Data we want to capture
+      </p>
+      <ul style="font-size:0.72em; color:#64748B;">
+        <li><i data-lucide="trending-up" style="width:0.85em;height:0.85em;color:#14B8A6;vertical-align:-0.1em;"></i> Continuous glucose profile (24 h)</li>
+        <li><i data-lucide="bar-chart-2" style="width:0.85em;height:0.85em;color:#14B8A6;vertical-align:-0.1em;"></i> Variability (SD, CV, Time-in-Range)</li>
+        <li><i data-lucide="moon" style="width:0.85em;height:0.85em;color:#14B8A6;vertical-align:-0.1em;"></i> Nocturnal patterns</li>
+        <li><i data-lucide="utensils" style="width:0.85em;height:0.85em;color:#14B8A6;vertical-align:-0.1em;"></i> Postprandial response</li>
+        <li><i data-lucide="calendar" style="width:0.85em;height:0.85em;color:#14B8A6;vertical-align:-0.1em;"></i> Longitudinal evolution during treatment</li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="notes">
+    The third project has a different starting point. Growing evidence suggests that glycaemic variability may be a relevant biomarker in breast cancer. The challenge is obtaining CGM data from patients comfortably and at low cost.
+  </aside>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 16 — Sensor hacking + Juggluco
+═══════════════════════════════════════════ -->
+<section>
+  <div class="bloc-tag tag-glucosa">Glucose App · 2/3</div>
+  <h2>The Solution: Sensor Hacking with Juggluco</h2>
+  <div class="section-divider"></div>
+
+  <div class="sensor-diagram" style="margin-top:18px;">
+    <div class="sensor-node sn-blue">
+      <div class="sn-icon icon-blue"><i data-lucide="radio"></i></div>
+      <div class="sn-label">CGM Sensor</div>
+      <div class="sn-sub">FreeStyle Libre<br>Dexcom, etc.</div>
+    </div>
+    <div class="sensor-arrow">
+      <i data-lucide="arrow-right" style="width:1.4em;height:1.4em;color:#94A3B8;"></i>
+      <span class="sa-label">NFC / BT</span>
+    </div>
+    <div class="sensor-node sn-indigo">
+      <div class="sn-icon icon-indigo"><i data-lucide="smartphone"></i></div>
+      <div class="sn-label">Juggluco</div>
+      <div class="sn-sub">Open-source app<br>Reverse-engineered</div>
+    </div>
+    <div class="sensor-arrow">
+      <i data-lucide="arrow-right" style="width:1.4em;height:1.4em;color:#94A3B8;"></i>
+      <span class="sa-label">Local API</span>
+    </div>
+    <div class="sensor-node sn-teal">
+      <div class="sn-icon icon-teal"><i data-lucide="activity"></i></div>
+      <div class="sn-label">Our App</div>
+      <div class="sn-sub">Dashboard<br>Clinical analysis</div>
+    </div>
+  </div>
+
+  <div class="two-col two-col-5-5" style="margin-top:16px; gap:14px;">
+    <div class="highlight-box" style="border-color:#14B8A6; background:#F0FDFA;">
+      <div class="hb-title" style="color:#0F766E; display:flex;align-items:center;gap:6px;">
+        <i data-lucide="unlock" class="icon-teal"></i> Why sensor hacking?
+      </div>
+      <div class="hb-body" style="font-size:0.9em;">
+        Commercial sensors <strong>do not allow easy data export</strong> outside their official apps. Juggluco is an open-source app that reads sensors via NFC/BT, giving us real-time data access.
+      </div>
+    </div>
+    <div class="highlight-box" style="border-color:#14B8A6; background:#F0FDFA;">
+      <div class="hb-title" style="color:#0F766E; display:flex;align-items:center;gap:6px;">
+        <i data-lucide="lightbulb" class="icon-teal"></i> The advantage
+      </div>
+      <div class="hb-body" style="font-size:0.9em;">
+        Patients <strong>already wear these sensors</strong> for their own health management — no additional hardware cost, no separate certified device needed.
+      </div>
+    </div>
+  </div>
+
+  <aside class="notes">
+    Commercial sensors like the FreeStyle Libre don't allow easy data export. Juggluco is an open-source app that reverse-engineers the NFC protocol and lets us read the data in real time. We connect our app to Juggluco's API to get the patient's data.
+  </aside>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 17 — Glucose app status
+═══════════════════════════════════════════ -->
+<section>
+  <div class="bloc-tag tag-glucosa">Glucose App · 3/3</div>
+  <h2>Current Status &amp; Next Steps</h2>
+  <div class="section-divider"></div>
+
+  <div class="two-col two-col-6-4" style="margin-top:14px;">
+    <div class="screenshot-placeholder" style="min-height:260px;">
+      <div class="ph-icon icon-teal"><i data-lucide="activity"></i></div>
+      <div class="ph-label">Screenshot — Glucose App</div>
+      <div class="ph-hint">Visual dashboard · CGM charts · Metrics</div>
+    </div>
+    <div>
+      <p style="font-size:0.75em; font-weight:700; color:#0F766E; margin-bottom:8px; display:flex;align-items:center;gap:5px;">
+        <i data-lucide="check-circle-2" class="icon-green"></i> Completed
+      </p>
+      <ul class="check-list" style="margin-bottom:12px;">
+        <li><span class="ck-icon icon-green"><i data-lucide="check-circle-2"></i></span><span class="ck-text"><strong>Full visual design</strong> of the app</span></li>
+        <li><span class="ck-icon icon-green"><i data-lucide="check-circle-2"></i></span><span class="ck-text"><strong>Dashboard screens</strong> and data visualisation</span></li>
+      </ul>
+      <p style="font-size:0.75em; font-weight:700; color:#14B8A6; margin-bottom:8px; display:flex;align-items:center;gap:5px;">
+        <i data-lucide="clock" class="icon-teal"></i> Next steps
+      </p>
+      <ul class="check-list">
+        <li><span class="ck-icon icon-teal"><i data-lucide="clock"></i></span><span class="ck-text"><strong>Juggluco integration</strong></span></li>
+        <li><span class="ck-icon icon-teal"><i data-lucide="clock"></i></span><span class="ck-text"><strong>Glucose data pipeline</strong> → analysis</span></li>
+        <li><span class="ck-icon icon-teal"><i data-lucide="clock"></i></span><span class="ck-text"><strong>Pilot study</strong> with patients</span></li>
+      </ul>
+      <div style="margin-top:10px;padding:10px 13px;background:#F0FDFA;border:1px solid #99F6E4;border-radius:8px;font-size:0.64em;display:flex;align-items:flex-start;gap:8px;">
+        <i data-lucide="layers" style="width:1em;height:1em;color:#14B8A6;flex-shrink:0;margin-top:1px;"></i>
+        <div style="color:#0F766E;line-height:1.5;">
+          <strong>Private, independent application.</strong><br>
+          Validates that Medinet extends beyond epigenomics — a second domain (clinical glucose monitoring) with no changes to the platform core.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="notes">
+    The glucose app is private, not heading toward a publication. Its role is to show that Medinet is a general platform — not tied to a single domain. By building a second application in a completely different field, we validate the portability and extensibility of the base architecture.
+  </aside>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 18 — Year in review
+═══════════════════════════════════════════ -->
+<section>
+  <div class="bloc-tag tag-intro">Conclusions</div>
+  <h2>Year in Review: A Year of Solid Building</h2>
+  <div class="section-divider"></div>
+
+  <div class="summary-grid" style="margin-top:18px;">
+    <div class="summary-card sc-medinet">
+      <div class="sc-tag" style="color:#1E40AF; display:flex;align-items:center;gap:4px;">
+        <i data-lucide="layers" style="width:0.9em;height:0.9em;"></i> Medinet
+      </div>
+      <div class="sc-title">Solid platform</div>
+      <ul>
+        <li>Hub + Node operational</li>
+        <li>Budget Policy v2 + DP</li>
+        <li>Paper → Bioinformatics</li>
+        <li>Public documentation</li>
+      </ul>
+    </div>
+    <div class="summary-card sc-epiflare">
+      <div class="sc-tag" style="color:#3730A3; display:flex;align-items:center;gap:4px;">
+        <i data-lucide="dna" style="width:0.9em;height:0.9em;"></i> EPIFLARE
+      </div>
+      <div class="sc-title">Validates portability</div>
+      <ul>
+        <li>Built on Medinet · private</li>
+        <li>Smart CpG matching</li>
+        <li>ONNX inference live</li>
+        <li>Security audited (v0.2)</li>
+      </ul>
+    </div>
+    <div class="summary-card sc-glucosa">
+      <div class="sc-tag" style="color:#0F766E; display:flex;align-items:center;gap:4px;">
+        <i data-lucide="activity" style="width:0.9em;height:0.9em;"></i> Glucose App
+      </div>
+      <div class="sc-title">2nd domain · new line</div>
+      <ul>
+        <li>Breast cancer monitoring</li>
+        <li>Sensor hacking (Juggluco)</li>
+        <li>Visual design complete</li>
+        <li>Integration in progress</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="highlight-box" style="margin-top:16px;">
+    <div class="hb-body" style="font-size:0.95em; display:flex;align-items:center;gap:8px;">
+      <i data-lucide="globe" class="icon-blue" style="flex-shrink:0;"></i>
+      <span><strong>A technological ecosystem for medical research</strong>: solid base platform, first production application, and new clinical research line.</span>
+    </div>
+  </div>
+
+  <aside class="notes">
+    To close: this year we built a functional and publishable federated learning platform, derived a real application for geneticists that is already operational, and opened a new clinical research line. Three fronts advanced consistently. Thank you.
+  </aside>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 19 — Questions
+═══════════════════════════════════════════ -->
+<section>
+  <div class="questions-slide">
+    <div class="section-divider" style="width:40px;"></div>
+    <div class="qs-big">Thank you.</div>
+    <div class="qs-sub">Questions?</div>
+    <div class="qs-contact">
+      <strong>Ramon Mateo Navarro</strong><br>
+      Supervisor: Juan R. González, PhD<br>
+      <i data-lucide="mail" style="width:0.9em;height:0.9em;vertical-align:-0.1em;color:#2563EB;"></i>
+      ramon.mateo@citm.upc.edu<br>
+      <i data-lucide="globe" style="width:0.9em;height:0.9em;vertical-align:-0.1em;color:#2563EB;"></i>
+      isglobal-brge.github.io/MediNet
+    </div>
+  </div>
+  <aside class="notes">
+    Open for questions.
+  </aside>
+</section>
+
+</div><!-- .slides -->
+</div><!-- .reveal -->
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"
+        integrity="sha256-lza/PYkY45HowHyFxTdzgA1ABNwl+UiRbjGco3HKiBo="
+        crossorigin="anonymous"></script>
+<script src="assets/lucide.min.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    transition: 'slide',
+    backgroundTransition: 'fade',
+    slideNumber: 'c/t',
+    progress: true,
+    controls: true,
+    center: false,
+    width: 1440,
+    height: 810,
+    margin: 0.06,
+    plugins: []
+  });
+
+  function renderAll() {
+    lucide.createIcons();
+    if (window.renderMathInElement) {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '\\(', right: '\\)', display: false}
+        ],
+        throwOnError: false
+      });
+    }
+  }
+  Reveal.on('ready', renderAll);
+  Reveal.on('slidechanged', renderAll);
+</script>
+</body>
+</html>
