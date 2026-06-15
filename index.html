@@ -114,7 +114,7 @@
     <!-- Left: problem + solution (icon + short text) -->
     <div style="display:flex;flex-direction:column;gap:18px;">
       <div style="display:flex;gap:14px;align-items:flex-start;">
-        <div style="flex-shrink:0;width:30px;height:30px;border-radius:50%;background:#FEE2E2;display:flex;align-items:center;justify-content:center;">
+        <div style="flex-shrink:0;width:30px;height:30px;border-radius:50%;background:#FEE2E2;display:flex;align-items:center;justify-content:center;margin-top:4px;">
           <i data-lucide="x" style="width:0.9em;height:0.9em;color:#DC2626;"></i>
         </div>
         <div>
@@ -123,12 +123,12 @@
         </div>
       </div>
       <div style="display:flex;gap:14px;align-items:flex-start;">
-        <div style="flex-shrink:0;width:30px;height:30px;border-radius:50%;background:#DCFCE7;display:flex;align-items:center;justify-content:center;">
+        <div style="flex-shrink:0;width:30px;height:30px;border-radius:50%;background:#DCFCE7;display:flex;align-items:center;justify-content:center;margin-top:4px;">
           <i data-lucide="check" style="width:0.9em;height:0.9em;color:#16A34A;"></i>
         </div>
         <div>
           <p style="font-weight:700;color:var(--text-primary);font-size:0.82em;margin:0 0 4px 0;">The Solution: Federated Learning</p>
-          <p style="font-size:0.74em;color:var(--text-secondary);margin:0;line-height:1.55;">Bring the <strong>model to the data</strong>, not the other way around. Each hospital trains locally and shares only model parameters — never patient data.</p>
+          <p style="font-size:0.74em;color:var(--text-secondary);margin:0;line-height:1.55;">Bring the <strong>model to the data</strong>, not data to the model. Each hospital trains locally and shares only model parameters — never patient data.</p>
         </div>
       </div>
     </div>
@@ -166,7 +166,7 @@
   </div>
 
   <aside class="notes">
-    The problem that motivates the whole project: hospitals have valuable data but cannot share it. The solution is federated learning: we bring the model to the data. Each hospital trains locally and shares only model parameters, never patient data.
+    The problem that motivates the whole project: hospitals have valuable data but cannot share it. The solution is federated learning: we bring the model to the data, not data to the model. Each hospital trains locally and shares only model parameters, never patient data.
   </aside>
 </section>
 
@@ -195,42 +195,46 @@
       </div>
     </div>
 
-    <!-- Middle -->
-    <div class="arch-mid" style="min-width:110px;">
-      <div style="display:flex;flex-direction:column;gap:4px;align-items:center;">
-        <i data-lucide="arrow-right" style="width:1em;height:1em;color:#2563EB;"></i>
-        <i data-lucide="arrow-right" style="width:1em;height:1em;color:#2563EB;opacity:0.6;"></i>
-        <i data-lucide="arrow-right" style="width:1em;height:1em;color:#2563EB;opacity:0.3;"></i>
-      </div>
-      <div class="flower-badge" style="margin-top:8px;">Flower Server</div>
-      <div style="font-size:0.54em;color:var(--text-muted);text-align:center;margin:6px 0;line-height:1.4;">params only<br>no patient data</div>
+    <!-- Middle: Flower Server centered, no arrows here -->
+    <div class="arch-mid" style="min-width:110px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;">
+      <div class="flower-badge">Flower Server</div>
+      <div style="font-size:0.54em;color:var(--text-muted);text-align:center;line-height:1.4;">params only<br>no patient data</div>
       <div class="dp-badge">
         <i data-lucide="shield" style="width:0.85em;height:0.85em;"></i> Diff. Privacy
       </div>
     </div>
 
-    <!-- Nodes -->
+    <!-- Nodes — arrow per row -->
     <div style="flex:1;display:flex;flex-direction:column;gap:7px;">
       <div style="font-size:0.56em;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;padding-bottom:4px;border-bottom:1px solid var(--border);">
         MediNetNode — one per institution
       </div>
-      <div class="arch-box arch-node" style="padding:10px 14px;flex:1;">
-        <div style="display:flex;align-items:center;gap:5px;font-size:0.82em;font-weight:700;color:var(--text-primary);">
-          <i data-lucide="building-2" style="color:#3730A3;width:0.9em;height:0.9em;"></i> Hospital A
+      <div style="display:flex;align-items:center;gap:8px;flex:1;">
+        <i data-lucide="arrow-right" style="width:1.1em;height:1.1em;color:#2563EB;flex-shrink:0;"></i>
+        <div class="arch-box arch-node" style="padding:10px 14px;flex:1;">
+          <div style="display:flex;align-items:center;gap:5px;font-size:0.82em;font-weight:700;color:var(--text-primary);">
+            <i data-lucide="building-2" style="color:#3730A3;width:0.9em;height:0.9em;"></i> Hospital A
+          </div>
+          <div style="font-size:0.66em;color:var(--text-muted);margin-top:3px;">local training · differential privacy</div>
         </div>
-        <div style="font-size:0.66em;color:var(--text-muted);margin-top:3px;">local training · differential privacy</div>
       </div>
-      <div class="arch-box arch-node" style="padding:10px 14px;flex:1;">
-        <div style="display:flex;align-items:center;gap:5px;font-size:0.82em;font-weight:700;color:var(--text-primary);">
-          <i data-lucide="building-2" style="color:#3730A3;width:0.9em;height:0.9em;"></i> Hospital B
+      <div style="display:flex;align-items:center;gap:8px;flex:1;">
+        <i data-lucide="arrow-right" style="width:1.1em;height:1.1em;color:#2563EB;opacity:0.6;flex-shrink:0;"></i>
+        <div class="arch-box arch-node" style="padding:10px 14px;flex:1;">
+          <div style="display:flex;align-items:center;gap:5px;font-size:0.82em;font-weight:700;color:var(--text-primary);">
+            <i data-lucide="building-2" style="color:#3730A3;width:0.9em;height:0.9em;"></i> Hospital B
+          </div>
+          <div style="font-size:0.66em;color:var(--text-muted);margin-top:3px;">data never leaves the institution</div>
         </div>
-        <div style="font-size:0.66em;color:var(--text-muted);margin-top:3px;">data never leaves the institution</div>
       </div>
-      <div class="arch-box arch-node" style="padding:10px 14px;flex:1;opacity:0.5;border-style:dashed;">
-        <div style="display:flex;align-items:center;gap:5px;font-size:0.82em;font-weight:700;color:var(--text-primary);">
-          <i data-lucide="building-2" style="color:#3730A3;width:0.9em;height:0.9em;"></i> Hospital C, D…
+      <div style="display:flex;align-items:center;gap:8px;flex:1;">
+        <i data-lucide="arrow-right" style="width:1.1em;height:1.1em;color:#2563EB;opacity:0.3;flex-shrink:0;"></i>
+        <div class="arch-box arch-node" style="padding:10px 14px;flex:1;opacity:0.5;border-style:dashed;">
+          <div style="display:flex;align-items:center;gap:5px;font-size:0.82em;font-weight:700;color:var(--text-primary);">
+            <i data-lucide="building-2" style="color:#3730A3;width:0.9em;height:0.9em;"></i> Hospital C, D…
+          </div>
+          <div style="font-size:0.66em;color:var(--text-muted);margin-top:3px;">scalable to N institutions</div>
         </div>
-        <div style="font-size:0.66em;color:var(--text-muted);margin-top:3px;">scalable to N institutions</div>
       </div>
     </div>
 
@@ -418,12 +422,12 @@
         </div>
         <span style="color:#DC2626;font-weight:700;min-width:48px;">B ≈ 0 🚨</span>
       </div>
-      <div style="margin-top:4px;padding:7px 10px;background:#FEF2F2;border:1px solid #FECACA;border-radius:7px;font-size:0.57em;color:#991B1B;display:flex;align-items:flex-start;gap:6px;">
-        <i data-lucide="alert-triangle" style="width:0.9em;height:0.9em;flex-shrink:0;margin-top:1px;"></i>
+      <div style="margin-top:4px;padding:7px 10px;background:#FEF2F2;border:1px solid #FECACA;border-radius:7px;font-size:0.57em;color:#991B1B;display:flex;align-items:center;gap:6px;">
+        <i data-lucide="alert-triangle" style="width:1em;height:1em;flex-shrink:0;"></i>
         <span>When B → 0, accumulated gradients can be used for model inversion. Patient data is at risk.</span>
       </div>
-      <div style="padding:7px 10px;background:#DCFCE7;border:1px solid #86EFAC;border-radius:7px;font-size:0.57em;color:#166534;display:flex;align-items:flex-start;gap:6px;">
-        <i data-lucide="shield-check" style="width:0.9em;height:0.9em;flex-shrink:0;margin-top:1px;"></i>
+      <div style="padding:7px 10px;background:#DCFCE7;border:1px solid #86EFAC;border-radius:7px;font-size:0.57em;color:#166534;display:flex;align-items:center;gap:6px;">
+        <i data-lucide="shield-check" style="width:1em;height:1em;flex-shrink:0;"></i>
         <span><strong>v2 Budget Policy:</strong> each client has a fixed budget. When exhausted, they are excluded automatically.</span>
       </div>
     </div>
@@ -471,7 +475,7 @@
       <div class="formula-box" style="padding:10px 16px;">
         <div class="formula-label">Budget update per round for client \(i\)</div>
         <div class="formula-text" style="font-size:0.82em;">$$B_i(t) = B_i(t-1) - \varepsilon_i(t)$$</div>
-        <div style="font-size:0.58em; color:var(--text-muted); margin-top:4px;">
+        <div style="font-size:0.46em; color:var(--text-muted); margin-top:4px; white-space:nowrap;">
           \(\varepsilon_i(t)\) — privacy cost of round \(t\) &nbsp;·&nbsp; participates iff \(B_i(t) > 0\)
         </div>
       </div>
@@ -661,7 +665,7 @@
     <!-- Left: context + role -->
     <div style="display:flex;flex-direction:column;gap:18px;">
       <div style="display:flex;gap:14px;align-items:flex-start;">
-        <div style="flex-shrink:0;width:30px;height:30px;border-radius:50%;background:#EEF2FF;display:flex;align-items:center;justify-content:center;">
+        <div style="flex-shrink:0;width:30px;height:30px;border-radius:50%;background:#EEF2FF;display:flex;align-items:center;justify-content:center;margin-top:4px;">
           <i data-lucide="dna" style="width:0.9em;height:0.9em;color:#6366F1;"></i>
         </div>
         <div>
@@ -670,7 +674,7 @@
         </div>
       </div>
       <div style="display:flex;gap:14px;align-items:flex-start;">
-        <div style="flex-shrink:0;width:30px;height:30px;border-radius:50%;background:#EEF2FF;display:flex;align-items:center;justify-content:center;">
+        <div style="flex-shrink:0;width:30px;height:30px;border-radius:50%;background:#EEF2FF;display:flex;align-items:center;justify-content:center;margin-top:4px;">
           <i data-lucide="user-plus" style="width:0.9em;height:0.9em;color:#6366F1;"></i>
         </div>
         <div>
