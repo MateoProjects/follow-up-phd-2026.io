@@ -366,6 +366,98 @@
 </section>
 
 <!-- ═══════════════════════════════════════════
+     SLIDE — Model Builder v1 (Sequential)
+═══════════════════════════════════════════ -->
+<section>
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:5px;">
+    <div class="bloc-tag tag-medinet" style="margin-bottom:0;">Medinet · 6/10</div>
+    <span style="font-size:0.6em;background:#DCFCE7;color:#15803D;padding:2px 8px;border-radius:99px;font-weight:700;">✦ what's new</span>
+  </div>
+  <h2>Visual Model Builder — Sequential (v1)</h2>
+  <div class="section-divider"></div>
+
+  <div class="two-col two-col-6-4" style="margin-top:14px;gap:24px;align-items:flex-start;">
+    <!-- Left: screenshot placeholder -->
+    <div>
+      <img src="assets/model_builder_v1.PNG" alt="Sequential Model Builder interface"
+           style="width:100%;border-radius:8px;border:1px solid var(--border);box-shadow:var(--shadow-sm);display:block;">
+    </div>
+
+    <!-- Right: features -->
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div class="highlight-box" style="border-color:#BFDBFE;background:#EFF6FF;">
+        <div class="hb-title" style="color:#1E40AF;font-size:0.82em;">
+          <i data-lucide="mouse-pointer-2" style="width:0.9em;height:0.9em;vertical-align:-0.1em;"></i> No code needed
+        </div>
+        <div class="hb-body" style="font-size:0.85em;color:#1E3A8A;">Add, remove and reorder layers via the UI. Parameters editable inline.</div>
+      </div>
+      <div class="highlight-box" style="border-color:#BFDBFE;background:#EFF6FF;">
+        <div class="hb-title" style="color:#1E40AF;font-size:0.82em;">
+          <i data-lucide="alert-circle" style="width:0.9em;height:0.9em;vertical-align:-0.1em;"></i> Constraint: linear chain
+        </div>
+        <div class="hb-body" style="font-size:0.85em;color:#1E3A8A;">Each layer feeds only the next. No skip connections or branching — motivation for v2.</div>
+      </div>
+      <div class="highlight-box" style="border-color:#BFDBFE;background:#EFF6FF;">
+        <div class="hb-title" style="color:#1E40AF;font-size:0.82em;">
+          <i data-lucide="check-circle-2" style="width:0.9em;height:0.9em;vertical-align:-0.1em;color:#16A34A;"></i> Deployed &amp; in use
+        </div>
+        <div class="hb-body" style="font-size:0.85em;color:#1E3A8A;">Used in all current federated training experiments.</div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="notes">
+    The sequential builder (v1) lets clinicians define a neural network without writing code. Dense, Dropout, LSTM, Conv1D — add them in order, configure each one inline, and the system exports the architecture for training. The only limitation is that it only supports linear chains: one layer feeds the next, nothing else.
+  </aside>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE — Model Builder v2 (Graph-based)
+═══════════════════════════════════════════ -->
+<section>
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:5px;">
+    <div class="bloc-tag tag-medinet" style="margin-bottom:0;">Medinet · 7/10</div>
+    <span style="font-size:0.6em;background:#FEF3C7;color:#92400E;padding:2px 8px;border-radius:99px;font-weight:700;">⚙ in development</span>
+  </div>
+  <h2>Visual Model Builder — Graph-Based (v2)</h2>
+  <div class="section-divider"></div>
+
+  <div class="two-col two-col-6-4" style="margin-top:14px;gap:24px;align-items:flex-start;">
+    <!-- Left: screenshot placeholder -->
+    <div>
+      <img src="assets/model_builder_v2.PNG" alt="Graph Model Builder v2 interface"
+           style="width:100%;border-radius:8px;border:1px solid var(--border);box-shadow:var(--shadow-sm);display:block;">
+    </div>
+
+    <!-- Right: what's new -->
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div class="highlight-box" style="border-color:#FDE68A;background:#FFFBEB;">
+        <div class="hb-title" style="color:#92400E;font-size:0.82em;">
+          <i data-lucide="git-branch" style="width:0.9em;height:0.9em;vertical-align:-0.1em;"></i> Any layer → any layer
+        </div>
+        <div class="hb-body" style="font-size:0.85em;color:#78350F;">Connect layers freely — skip connections, parallel branches, merge points.</div>
+      </div>
+      <div class="highlight-box" style="border-color:#FDE68A;background:#FFFBEB;">
+        <div class="hb-title" style="color:#92400E;font-size:0.82em;">
+          <i data-lucide="network" style="width:0.9em;height:0.9em;vertical-align:-0.1em;"></i> Richer architectures
+        </div>
+        <div class="hb-body" style="font-size:0.85em;color:#78350F;">ResNet-style, multi-input fusion, ensemble splits — all without code.</div>
+      </div>
+      <div class="highlight-box" style="border-color:#FDE68A;background:#FFFBEB;">
+        <div class="hb-title" style="color:#92400E;font-size:0.82em;">
+          <i data-lucide="clock" style="width:0.9em;height:0.9em;vertical-align:-0.1em;"></i> Under active development
+        </div>
+        <div class="hb-body" style="font-size:0.85em;color:#78350F;">Backend graph compiler in progress. UI design finalised.</div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="notes">
+    v2 replaces the linear chain with a proper directed acyclic graph. You can connect any layer to any downstream layer — which unlocks skip connections (ResNet-style), parallel branches that merge later, and multi-input architectures. The UI design is done; the backend graph compiler that validates the DAG and translates it to a Keras Functional API model is under active development.
+  </aside>
+</section>
+
+<!-- ═══════════════════════════════════════════
      SLIDE 6 — MediNetNode
 ═══════════════════════════════════════════ -->
 <section>
@@ -496,98 +588,6 @@
 
   <aside class="notes">
     This is the key insight that motivated v2. Standard DP protects each round, but privacy cost accumulates. An adversary who collects enough gradient updates — across many rounds — can start reversing the model to extract patient data. We needed to limit total participation, not just per-round privacy. That's the Budget Policy.
-  </aside>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     SLIDE — Model Builder v1 (Sequential)
-═══════════════════════════════════════════ -->
-<section>
-  <div style="display:flex;align-items:center;gap:10px;margin-bottom:5px;">
-    <div class="bloc-tag tag-medinet" style="margin-bottom:0;">Medinet · 6/10</div>
-    <span style="font-size:0.6em;background:#DCFCE7;color:#15803D;padding:2px 8px;border-radius:99px;font-weight:700;">✦ what's new</span>
-  </div>
-  <h2>Visual Model Builder — Sequential (v1)</h2>
-  <div class="section-divider"></div>
-
-  <div class="two-col two-col-6-4" style="margin-top:14px;gap:24px;align-items:flex-start;">
-    <!-- Left: screenshot placeholder -->
-    <div>
-      <img src="assets/model_builder_v1.PNG" alt="Sequential Model Builder interface"
-           style="width:100%;border-radius:8px;border:1px solid var(--border);box-shadow:var(--shadow-sm);display:block;">
-    </div>
-
-    <!-- Right: features -->
-    <div style="display:flex;flex-direction:column;gap:10px;">
-      <div class="highlight-box" style="border-color:#BFDBFE;background:#EFF6FF;">
-        <div class="hb-title" style="color:#1E40AF;font-size:0.82em;">
-          <i data-lucide="mouse-pointer-2" style="width:0.9em;height:0.9em;vertical-align:-0.1em;"></i> No code needed
-        </div>
-        <div class="hb-body" style="font-size:0.85em;color:#1E3A8A;">Add, remove and reorder layers via the UI. Parameters editable inline.</div>
-      </div>
-      <div class="highlight-box" style="border-color:#BFDBFE;background:#EFF6FF;">
-        <div class="hb-title" style="color:#1E40AF;font-size:0.82em;">
-          <i data-lucide="alert-circle" style="width:0.9em;height:0.9em;vertical-align:-0.1em;"></i> Constraint: linear chain
-        </div>
-        <div class="hb-body" style="font-size:0.85em;color:#1E3A8A;">Each layer feeds only the next. No skip connections or branching — motivation for v2.</div>
-      </div>
-      <div class="highlight-box" style="border-color:#BFDBFE;background:#EFF6FF;">
-        <div class="hb-title" style="color:#1E40AF;font-size:0.82em;">
-          <i data-lucide="check-circle-2" style="width:0.9em;height:0.9em;vertical-align:-0.1em;color:#16A34A;"></i> Deployed &amp; in use
-        </div>
-        <div class="hb-body" style="font-size:0.85em;color:#1E3A8A;">Used in all current federated training experiments.</div>
-      </div>
-    </div>
-  </div>
-
-  <aside class="notes">
-    The sequential builder (v1) lets clinicians define a neural network without writing code. Dense, Dropout, LSTM, Conv1D — add them in order, configure each one inline, and the system exports the architecture for training. The only limitation is that it only supports linear chains: one layer feeds the next, nothing else.
-  </aside>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     SLIDE — Model Builder v2 (Graph-based)
-═══════════════════════════════════════════ -->
-<section>
-  <div style="display:flex;align-items:center;gap:10px;margin-bottom:5px;">
-    <div class="bloc-tag tag-medinet" style="margin-bottom:0;">Medinet · 7/10</div>
-    <span style="font-size:0.6em;background:#FEF3C7;color:#92400E;padding:2px 8px;border-radius:99px;font-weight:700;">⚙ in development</span>
-  </div>
-  <h2>Visual Model Builder — Graph-Based (v2)</h2>
-  <div class="section-divider"></div>
-
-  <div class="two-col two-col-6-4" style="margin-top:14px;gap:24px;align-items:flex-start;">
-    <!-- Left: screenshot placeholder -->
-    <div>
-      <img src="assets/model_builder_v2.PNG" alt="Graph Model Builder v2 interface"
-           style="width:100%;border-radius:8px;border:1px solid var(--border);box-shadow:var(--shadow-sm);display:block;">
-    </div>
-
-    <!-- Right: what's new -->
-    <div style="display:flex;flex-direction:column;gap:10px;">
-      <div class="highlight-box" style="border-color:#FDE68A;background:#FFFBEB;">
-        <div class="hb-title" style="color:#92400E;font-size:0.82em;">
-          <i data-lucide="git-branch" style="width:0.9em;height:0.9em;vertical-align:-0.1em;"></i> Any layer → any layer
-        </div>
-        <div class="hb-body" style="font-size:0.85em;color:#78350F;">Connect layers freely — skip connections, parallel branches, merge points.</div>
-      </div>
-      <div class="highlight-box" style="border-color:#FDE68A;background:#FFFBEB;">
-        <div class="hb-title" style="color:#92400E;font-size:0.82em;">
-          <i data-lucide="network" style="width:0.9em;height:0.9em;vertical-align:-0.1em;"></i> Richer architectures
-        </div>
-        <div class="hb-body" style="font-size:0.85em;color:#78350F;">ResNet-style, multi-input fusion, ensemble splits — all without code.</div>
-      </div>
-      <div class="highlight-box" style="border-color:#FDE68A;background:#FFFBEB;">
-        <div class="hb-title" style="color:#92400E;font-size:0.82em;">
-          <i data-lucide="clock" style="width:0.9em;height:0.9em;vertical-align:-0.1em;"></i> Under active development
-        </div>
-        <div class="hb-body" style="font-size:0.85em;color:#78350F;">Backend graph compiler in progress. UI design finalised.</div>
-      </div>
-    </div>
-  </div>
-
-  <aside class="notes">
-    v2 replaces the linear chain with a proper directed acyclic graph. You can connect any layer to any downstream layer — which unlocks skip connections (ResNet-style), parallel branches that merge later, and multi-input architectures. The UI design is done; the backend graph compiler that validates the DAG and translates it to a Keras Functional API model is under active development.
   </aside>
 </section>
 
@@ -1252,6 +1252,11 @@
         Patients <strong>already wear these sensors</strong> for their own health management — no additional hardware cost, no separate certified device needed.
       </div>
     </div>
+  </div>
+
+  <div style="margin-top:10px;display:flex;align-items:center;gap:7px;font-size:0.55em;color:#0F766E;line-height:1.4;">
+    <i data-lucide="users" style="width:1em;height:1em;flex-shrink:0;"></i>
+    <span><strong>#WeAreNotWaiting</strong> — Juggluco is part of the open-source diabetes community (Nightscout, OpenAPS, Loop…) that reverse-engineers CGM sensors rather than waiting for industry tools.</span>
   </div>
 
   <aside class="notes">
