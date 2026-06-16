@@ -1020,52 +1020,11 @@
 </section>
 
 <!-- ═══════════════════════════════════════════
-     SLIDE 14b — EPIFLARE status text
+     SLIDE 14b — EPIFLARE Smart CpG Matching
 ═══════════════════════════════════════════ -->
 <section>
   <div style="display:flex;align-items:center;gap:14px;margin-bottom:5px;">
     <div class="bloc-tag tag-epiflare" style="margin-bottom:0;">EPIFLARE · 5/6</div>
-    <img src="assets/epiflare_logo.png" alt="EPIFLARE" style="height:22px;object-fit:contain;">
-  </div>
-  <h2>Status &amp; Next Steps — EPIFLARE</h2>
-  <div class="section-divider"></div>
-
-  <div class="two-col two-col-5-5" style="margin-top:20px;">
-    <div>
-      <p style="font-size:0.72em; font-weight:700; color:#3730A3; margin-bottom:10px; display:flex;align-items:center;gap:5px;">
-        <i data-lucide="check-circle-2" class="icon-green"></i> Completed (v0.2)
-      </p>
-      <ul class="check-list">
-        <li><span class="ck-icon icon-green"><i data-lucide="check-circle-2"></i></span><span class="ck-text"><strong>Web interface</strong> — Docker, full deployment</span></li>
-        <li><span class="ck-icon icon-green"><i data-lucide="check-circle-2"></i></span><span class="ck-text"><strong>ONNX inference</strong> — local predictions</span></li>
-        <li><span class="ck-icon icon-green"><i data-lucide="check-circle-2"></i></span><span class="ck-text"><strong>Semantic output</strong> — complete MVP</span></li>
-        <li><span class="ck-icon icon-green"><i data-lucide="check-circle-2"></i></span><span class="ck-text"><strong>Geneticist role</strong> — CSV &amp; ONNX upload</span></li>
-        <li><span class="ck-icon icon-green"><i data-lucide="check-circle-2"></i></span><span class="ck-text"><strong>Security stack</strong> — formal audit done</span></li>
-      </ul>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:8px;">
-      <p style="font-size:0.72em; font-weight:700; color:#6366F1; margin-bottom:4px; display:flex;align-items:center;gap:5px;">
-        <i data-lucide="clock" class="icon-indigo"></i> Next steps
-      </p>
-      <ul class="check-list">
-        <li><span class="ck-icon icon-indigo"><i data-lucide="clock"></i></span><span class="ck-text"><strong>FL for SVM / Random Forest</strong><br>Classical epigenomics methods</span></li>
-        <li><span class="ck-icon icon-indigo"><i data-lucide="clock"></i></span><span class="ck-text"><strong>API-based inference</strong><br>Direct from Node, no web UI</span></li>
-        <li><span class="ck-icon icon-indigo"><i data-lucide="clock"></i></span><span class="ck-text"><strong>Security hardening</strong><br>2FA, HTTPS, email verification</span></li>
-      </ul>
-    </div>
-  </div>
-
-  <aside class="notes">
-    EPIFLARE is a private application for real clinical use, not heading toward a standalone publication. Its value is proving that Medinet's architecture is portable: a domain-specific application built on the same platform without rebuilding from scratch.
-  </aside>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     SLIDE 15 — EPIFLARE Smart CpG Matching
-═══════════════════════════════════════════ -->
-<section>
-  <div style="display:flex;align-items:center;gap:14px;margin-bottom:5px;">
-    <div class="bloc-tag tag-epiflare" style="margin-bottom:0;">EPIFLARE · 6/6</div>
     <img src="assets/epiflare_logo.png" alt="EPIFLARE" style="height:22px;object-fit:contain;">
   </div>
   <h2>Smart CpG Matching &amp; Inference</h2>
@@ -1124,6 +1083,47 @@
 
   <aside class="notes">
     This is the key technical detail: when a model is uploaded, the geneticist specifies which CpG sites the model was trained on. Then, when patient data arrives, the platform automatically finds those specific CpGs from each patient's EPIC array — which has 850,000 CpGs but the model may only need a few hundred. This automatic matching is transparent to the geneticist.
+  </aside>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 15 — EPIFLARE status text
+═══════════════════════════════════════════ -->
+<section>
+  <div style="display:flex;align-items:center;gap:14px;margin-bottom:5px;">
+    <div class="bloc-tag tag-epiflare" style="margin-bottom:0;">EPIFLARE · 6/6</div>
+    <img src="assets/epiflare_logo.png" alt="EPIFLARE" style="height:22px;object-fit:contain;">
+  </div>
+  <h2>Status &amp; Next Steps — EPIFLARE</h2>
+  <div class="section-divider"></div>
+
+  <div class="two-col two-col-5-5" style="margin-top:20px;">
+    <div>
+      <p style="font-size:0.72em; font-weight:700; color:#3730A3; margin-bottom:10px; display:flex;align-items:center;gap:5px;">
+        <i data-lucide="check-circle-2" class="icon-green"></i> Completed (v0.2)
+      </p>
+      <ul class="check-list">
+        <li><span class="ck-icon icon-green"><i data-lucide="check-circle-2"></i></span><span class="ck-text"><strong>Web interface</strong> — Docker, full deployment</span></li>
+        <li><span class="ck-icon icon-green"><i data-lucide="check-circle-2"></i></span><span class="ck-text"><strong>ONNX inference</strong> — local predictions</span></li>
+        <li><span class="ck-icon icon-green"><i data-lucide="check-circle-2"></i></span><span class="ck-text"><strong>Semantic output</strong> — complete MVP</span></li>
+        <li><span class="ck-icon icon-green"><i data-lucide="check-circle-2"></i></span><span class="ck-text"><strong>Geneticist role</strong> — CSV &amp; ONNX upload</span></li>
+        <li><span class="ck-icon icon-green"><i data-lucide="check-circle-2"></i></span><span class="ck-text"><strong>Security stack</strong> — formal audit done</span></li>
+      </ul>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <p style="font-size:0.72em; font-weight:700; color:#6366F1; margin-bottom:4px; display:flex;align-items:center;gap:5px;">
+        <i data-lucide="clock" class="icon-indigo"></i> Next steps
+      </p>
+      <ul class="check-list">
+        <li><span class="ck-icon icon-indigo"><i data-lucide="clock"></i></span><span class="ck-text"><strong>FL for SVM / Random Forest</strong><br>Classical epigenomics methods</span></li>
+        <li><span class="ck-icon icon-indigo"><i data-lucide="clock"></i></span><span class="ck-text"><strong>API-based inference</strong><br>Direct from Node, no web UI</span></li>
+        <li><span class="ck-icon icon-indigo"><i data-lucide="clock"></i></span><span class="ck-text"><strong>Security hardening</strong><br>2FA, HTTPS, email verification</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="notes">
+    EPIFLARE is a private application for real clinical use, not heading toward a standalone publication. Its value is proving that Medinet's architecture is portable: a domain-specific application built on the same platform without rebuilding from scratch.
   </aside>
 </section>
 
