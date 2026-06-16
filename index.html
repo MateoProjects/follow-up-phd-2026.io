@@ -66,7 +66,70 @@
 </section>
 
 <!-- ═══════════════════════════════════════════
-     SLIDE 2 — Ecosystem overview
+     SLIDE 2 — Hypothesis & Research Objectives
+═══════════════════════════════════════════ -->
+<section>
+  <div class="bloc-tag tag-intro">Foundations</div>
+  <h2>Hypothesis &amp; Research Objectives</h2>
+  <div class="section-divider"></div>
+
+  <div class="two-col two-col-5-5" style="margin-top:18px; gap:28px; align-items:flex-start;">
+
+    <!-- Left: Hypotheses -->
+    <div>
+      <p style="font-size:0.74em;font-weight:700;color:var(--text-primary);margin:0 0 12px 0;display:flex;align-items:center;gap:6px;">
+        <i data-lucide="flask-conical" class="icon-blue"></i> Hypotheses
+      </p>
+      <ul class="check-list">
+        <li>
+          <span class="ck-icon icon-blue"><i data-lucide="brain-circuit"></i></span>
+          <span class="ck-text">Deep learning models can <strong>improve disease diagnosis and treatment</strong> through feature capture</span>
+        </li>
+        <li>
+          <span class="ck-icon icon-blue"><i data-lucide="combine"></i></span>
+          <span class="ck-text">Integration of <strong>radiomic features with clinical data</strong></span>
+        </li>
+        <li>
+          <span class="ck-icon icon-blue"><i data-lucide="zap"></i></span>
+          <span class="ck-text">Use of <strong>pretrained models in federated systems</strong> for faster diagnosis</span>
+        </li>
+        <li>
+          <span class="ck-icon icon-blue"><i data-lucide="shield-check"></i></span>
+          <span class="ck-text"><strong>Federated learning improves model efficacy</strong> without compromising data privacy</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Right: Research Objectives -->
+    <div>
+      <p style="font-size:0.74em;font-weight:700;color:var(--text-primary);margin:0 0 12px 0;display:flex;align-items:center;gap:6px;">
+        <i data-lucide="target" class="icon-indigo"></i> Research Objectives
+      </p>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;gap:11px;align-items:flex-start;font-size:0.72em;">
+          <div style="flex-shrink:0;width:24px;height:24px;border-radius:50%;background:#EEF2FF;display:flex;align-items:center;justify-content:center;font-weight:700;color:#3730A3;font-size:0.85em;">1</div>
+          <div style="color:var(--text-secondary);line-height:1.45;">Develop <strong>MediNet</strong>, a user-friendly web tool that includes an easy way to implement <strong>horizontal federated deep learning</strong> in medical environments</div>
+        </div>
+        <div style="display:flex;gap:11px;align-items:flex-start;font-size:0.72em;">
+          <div style="flex-shrink:0;width:24px;height:24px;border-radius:50%;background:#EEF2FF;display:flex;align-items:center;justify-content:center;font-weight:700;color:#3730A3;font-size:0.85em;">2</div>
+          <div style="color:var(--text-secondary);line-height:1.45;">Facilitate the <strong>development of models for clinical data</strong></div>
+        </div>
+        <div style="display:flex;gap:11px;align-items:flex-start;font-size:0.72em;">
+          <div style="flex-shrink:0;width:24px;height:24px;border-radius:50%;background:#EEF2FF;display:flex;align-items:center;justify-content:center;font-weight:700;color:#3730A3;font-size:0.85em;">3</div>
+          <div style="color:var(--text-secondary);line-height:1.45;">Implement <strong>transfer learning in federated environments</strong></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <aside class="notes">
+    Before the projects, let me frame the thesis. My hypotheses are that deep learning can improve diagnosis and treatment through feature capture, that radiomic features can be integrated with clinical data, that pretrained models in federated systems enable faster diagnosis, and that federated learning improves model efficacy without compromising data privacy. From these, the research objectives are: to develop MediNet — a user-friendly web tool for horizontal federated deep learning in medical environments; to facilitate model development on clinical data; and to implement transfer learning in federated environments.
+  </aside>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 3 — Ecosystem overview
 ═══════════════════════════════════════════ -->
 <section>
   <div class="bloc-tag tag-intro">Overview</div>
@@ -638,16 +701,16 @@
           <span class="ck-text">Submitted to <strong>Bioinformatics</strong></span>
         </li>
         <li>
+          <span class="ck-icon icon-green"><i data-lucide="thumbs-up"></i></span>
+          <span class="ck-text"><strong>Extremely positive</strong> reviewer comments</span>
+        </li>
+        <li>
           <span class="ck-icon icon-red"><i data-lucide="x-circle"></i></span>
-          <span class="ck-text">Rejected due to <strong>formatting issues</strong></span>
+          <span class="ck-text">Rejected by the editor <strong>with no reason given</strong>  after a 1–2 month wait</span>
         </li>
         <li>
           <span class="ck-icon icon-green"><i data-lucide="check-circle-2"></i></span>
           <span class="ck-text">Appeal <strong>accepted</strong></span>
-        </li>
-        <li>
-          <span class="ck-icon icon-indigo"><i data-lucide="pencil-line"></i></span>
-          <span class="ck-text">Incorporating <strong>reviewer corrections</strong></span>
         </li>
         <li>
           <span class="ck-icon icon-blue"><i data-lucide="target"></i></span>
@@ -658,7 +721,7 @@
   </div>
 
   <aside class="notes">
-    All the work on Medinet and the Budget Policy has been written into a manuscript for Bioinformatics. It was initially rejected for formatting issues, but we appealed and were accepted to resubmit, incorporating reviewer corrections.
+    All the work on Medinet and the Budget Policy has been written into a manuscript for Bioinformatics. The reviewer comments were extremely positive, yet after a one-to-two month wait the editor rejected the paper without giving any reason. We appealed, the appeal was accepted, and we are now preparing to resubmit shortly.
   </aside>
 </section>
 
@@ -732,9 +795,13 @@
     <p style="color:rgba(255,255,255,0.7); font-size:0.85em; margin:0;">
       Specialised for geneticists working with epigenomics data
     </p>
+    <div style="display:flex; align-items:center; gap:8px; margin-top:4px; color:rgba(255,255,255,0.85); font-size:0.7em;">
+      <i data-lucide="users" style="width:1em;height:1em;"></i>
+      <span>Co-developed with <strong style="color:#BFDBFE;">Albert Alegret</strong> — fellow PhD student</span>
+    </div>
   </div>
   <aside class="notes">
-    Once we had a solid platform, the natural question was: can we specialise it for a specific use case? We took the Medinet core and built EPIFLARE on top of it, an application designed for geneticists working with epigenomics data.
+    Once we had a solid platform, the natural question was: can we specialise it for a specific use case? We took the Medinet core and built EPIFLARE on top of it, an application designed for geneticists working with epigenomics data. EPIFLARE is being co-developed with Albert Alegret, another PhD student.
   </aside>
 </section>
 
